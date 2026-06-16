@@ -228,3 +228,44 @@ Stage Summary:
 - TikTok watermark cleanly cropped from the user's photo before publishing.
 - Lint clean, dev log clean, browser-verified.
 - Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
+
+---
+Task ID: 8
+Agent: main (Super Z)
+Task: Make the "Request a Quote" buttons redirect to contact channels — WhatsApp (preferred), email, or Instagram social.
+
+Work Log:
+- Added a contact-constants block at the top of page.tsx as a single source of truth:
+  • WHATSAPP_NUMBER = "256704438107"
+  • EMAIL = "rojakajojo@gmail.com"
+  • INSTAGRAM_URL = "https://www.instagram.com/rogervanilla"
+  • QUOTE_MESSAGE — a pre-filled quote request message ("Hello JOJO Vanilla & Coffee (U) Limited! I'd like to request a quote for your Ugandan vanilla, coffee or spices. Please share pricing, minimum order quantities and availability. Thank you!")
+  • WHATSAPP_QUOTE_URL — wa.me deep link with URL-encoded QUOTE_MESSAGE as ?text=
+  • EMAIL_QUOTE_URL — mailto: link with URL-encoded subject + body
+- Updated all 6 "Request a Quote" buttons across the site to use WHATSAPP_QUOTE_URL (opening in a new tab):
+  1. Desktop header CTA (top-right gold button)
+  2. Mobile drawer CTA (full-width gold button)
+  3. Hero secondary CTA (outline button)
+  4. ProductSpotlight "Request a Quote" button (navy)
+  5. QuoteCTA panel main button
+  6. Footer "Get in touch" column button
+- Rewrote the QuoteCTA "Request a Quote" panel to be a multi-channel contact hub. Instead of a single button, it now shows 3 contact option cards stacked vertically:
+  • PRIMARY — WhatsApp card: green background (bg-whatsapp), white text, blinking animation, circular icon container, label "Chat on WhatsApp" + "+256 704 438 107 · fastest reply", arrow icon, links to WHATSAPP_QUOTE_URL (new tab)
+  • SECONDARY — Email card: translucent navy (bg-primary-foreground/10), gold icon, label "Send us an Email" + "rojakajojo@gmail.com", links to EMAIL_QUOTE_URL (opens mail client)
+  • TERTIARY — Instagram card: translucent navy, gold icon, label "Message on Instagram" + "@rogervanilla", links to INSTAGRAM_URL (new tab)
+  • All 3 cards have hover effects (translate-x-1 slide right) and consistent layout (icon circle + text + arrow)
+  • Decorative oversized MessageCircle icon in the background (text-whatsapp/10) for visual interest
+- Verified via DOM inspection that all 4 "Request a Quote" buttons now have href="https://wa.me/256704438107?text=Hello%20JOJO%20Vanilla%20%26%20Coffee%20(U)%20Limited!..." with target="_blank".
+- Verified the QuoteCTA section has all 3 contact options correctly wired:
+  • WhatsApp → wa.me link with pre-filled message (new tab)
+  • Email → mailto: link with pre-filled subject + body (opens mail client)
+  • Instagram → instagram.com/rogervanilla (new tab)
+- Ran `bun run lint` — 0 errors, 0 warnings. Dev log clean.
+- Verified via Agent Browser + VLM: QuoteCTA section shows navy "Request a Quote" heading, 3 contact cards visible (green WhatsApp +256 704 438 107, Email rojakajojo@gmail.com, Instagram @rogervanilla), WhatsApp card stands out as green and eye-catching, "Explore our Products" card present on the left.
+
+Stage Summary:
+- All 6 "Request a Quote" buttons across the site now redirect to WhatsApp (https://wa.me/256704438107) with a pre-filled quote request message — opens in a new tab so the user doesn't lose their place on the site.
+- The main QuoteCTA section (near the bottom of the page) upgraded from a single button to a 3-channel contact hub: WhatsApp (primary, green, blinking), Email (mailto: with pre-filled subject+body), Instagram (@rogervanilla). Users pick whichever channel they prefer.
+- Pre-filled message means buyers don't have to type anything — they just hit send on WhatsApp/email and the quote request lands in the user's inbox with full context.
+- Lint clean, dev log clean, browser-verified.
+- Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/

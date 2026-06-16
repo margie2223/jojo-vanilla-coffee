@@ -38,6 +38,23 @@ import {
 /* Data                                                            */
 /* --------------------------------------------------------------- */
 
+/* --------------------------------------------------------------- */
+/* Contact constants — single source of truth                      */
+/* --------------------------------------------------------------- */
+
+const WHATSAPP_NUMBER = "256704438107";
+const EMAIL = "rojakajojo@gmail.com";
+const INSTAGRAM_URL = "https://www.instagram.com/rogervanilla";
+
+const QUOTE_MESSAGE =
+  "Hello JOJO Vanilla & Coffee (U) Limited! I'd like to request a quote for your Ugandan vanilla, coffee or spices. Please share pricing, minimum order quantities and availability. Thank you!";
+
+// URL-encoded WhatsApp deep link with the pre-filled quote message
+const WHATSAPP_QUOTE_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(QUOTE_MESSAGE)}`;
+
+// mailto: link with the same pre-filled subject + body
+const EMAIL_QUOTE_URL = `mailto:${EMAIL}?subject=${encodeURIComponent("Quote Request — JOJO Vanilla & Coffee (U) Limited")}&body=${encodeURIComponent(QUOTE_MESSAGE)}`;
+
 const NAV = [
   {
     label: "About Us",
@@ -346,7 +363,7 @@ function Header() {
               asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-quicksand font-semibold rounded-full px-6"
             >
-              <a href="#quote">Request a Quote</a>
+              <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer">Request a Quote</a>
             </Button>
           </div>
 
@@ -395,7 +412,7 @@ function Header() {
               asChild
               className="w-full mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-quicksand font-semibold rounded-full"
             >
-              <a href="#quote" onClick={() => setMobileOpen(false)}>
+              <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
                 Request a Quote
               </a>
             </Button>
@@ -461,7 +478,7 @@ function Hero() {
               variant="outline"
               className="bg-transparent border-primary-foreground/70 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground font-quicksand font-semibold rounded-full px-7"
             >
-              <a href="#quote">Request a Quote</a>
+              <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer">Request a Quote</a>
             </Button>
           </div>
         </div>
@@ -939,7 +956,7 @@ function ProductSpotlight() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-quicksand font-semibold rounded-full px-7"
               >
-                <a href="#quote" className="inline-flex items-center gap-2">
+                <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
                   Request a Quote
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -1184,25 +1201,73 @@ function QuoteCTA() {
             </Button>
           </div>
 
-          {/* Request a Quote */}
+          {/* Request a Quote — multi-channel contact panel */}
           <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-10 shadow-md flex flex-col relative overflow-hidden">
-            <Package className="absolute -bottom-6 -right-6 h-44 w-44 text-primary-foreground/10" />
+            <MessageCircle className="absolute -bottom-6 -right-6 h-44 w-44 text-whatsapp/10" />
+            <p className="relative inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-3">
+              <span className="h-px w-10 bg-accent" />
+              Get in touch
+            </p>
             <h2 className="font-quicksand font-bold text-2xl md:text-3xl text-primary-foreground mb-3 relative">
               Request a Quote
             </h2>
-            <p className="text-primary-foreground/90 text-base md:text-lg leading-relaxed flex-1 relative">
-              Whether you need bulk volumes or specific origins, we are ready to
-              help you find the right product at the right price.
+            <p className="text-primary-foreground/90 text-base md:text-lg leading-relaxed relative mb-6">
+              Whether you need bulk volumes or specific grades, we&apos;re ready
+              to help you find the right product at the right price. Pick the
+              channel that suits you best — we usually reply within a few hours.
             </p>
-            <Button
-              asChild
-              className="mt-6 self-start bg-accent hover:bg-accent/90 text-accent-foreground font-quicksand font-semibold rounded-full px-7 relative"
-            >
-              <a href="#contact" className="inline-flex items-center gap-2">
-                Request a quote
-                <ArrowRight className="h-4 w-4" />
+
+            {/* Three contact options */}
+            <div className="relative space-y-3">
+              {/* WhatsApp — primary, eye-catching */}
+              <a
+                href={WHATSAPP_QUOTE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 bg-whatsapp hover:bg-whatsapp/90 text-white rounded-xl p-4 shadow-md transition-all hover:translate-x-1 animate-whatsapp-blink"
+              >
+                <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-white/20 shrink-0">
+                  <MessageCircle className="h-6 w-6" />
+                </span>
+                <span className="flex-1">
+                  <span className="block font-quicksand font-bold text-base">Chat on WhatsApp</span>
+                  <span className="block text-white/85 text-sm">+256 704 438 107 · fastest reply</span>
+                </span>
+                <ArrowUpRight className="h-5 w-5 opacity-80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>
-            </Button>
+
+              {/* Email — secondary */}
+              <a
+                href={EMAIL_QUOTE_URL}
+                className="group flex items-center gap-4 bg-primary-foreground/10 hover:bg-primary-foreground/15 text-primary-foreground rounded-xl p-4 border border-primary-foreground/10 transition-all hover:translate-x-1"
+              >
+                <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-accent/20 text-accent shrink-0">
+                  <Mail className="h-6 w-6" />
+                </span>
+                <span className="flex-1">
+                  <span className="block font-quicksand font-bold text-base">Send us an Email</span>
+                  <span className="block text-primary-foreground/75 text-sm">{EMAIL}</span>
+                </span>
+                <ArrowUpRight className="h-5 w-5 opacity-80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
+
+              {/* Instagram — tertiary */}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 bg-primary-foreground/10 hover:bg-primary-foreground/15 text-primary-foreground rounded-xl p-4 border border-primary-foreground/10 transition-all hover:translate-x-1"
+              >
+                <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-accent/20 text-accent shrink-0">
+                  <Instagram className="h-6 w-6" />
+                </span>
+                <span className="flex-1">
+                  <span className="block font-quicksand font-bold text-base">Message on Instagram</span>
+                  <span className="block text-primary-foreground/75 text-sm">@rogervanilla</span>
+                </span>
+                <ArrowUpRight className="h-5 w-5 opacity-80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1364,7 +1429,7 @@ function Footer() {
               asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-quicksand font-semibold rounded-full px-6"
             >
-              <a href="#quote">Request a Quote</a>
+              <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer">Request a Quote</a>
             </Button>
 
             <div className="mt-8 space-y-2 text-sm text-primary-foreground/80">
