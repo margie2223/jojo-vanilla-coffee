@@ -269,3 +269,45 @@ Stage Summary:
 - Pre-filled message means buyers don't have to type anything — they just hit send on WhatsApp/email and the quote request lands in the user's inbox with full context.
 - Lint clean, dev log clean, browser-verified.
 - Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
+
+---
+Task ID: 9
+Agent: main (Super Z)
+Task: Prepare the project for deployment to Netlify under the user's team (margie-mk49).
+
+Work Log:
+- Created /home/z/my-project/netlify.toml with:
+  • Build command: bun run build
+  • Publish directory: .next
+  • Node version 20
+  • @netlify/plugin-nextjs plugin (handles SSR, image optimization, static export automatically)
+  • Security headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy)
+  • Long-cache headers for /_next/static/* (immutable, 1 year) and /images/* (1 day)
+  • SPA-style fallback redirect for client-side anchor links (#products, #quote, etc.)
+- Updated .gitignore to exclude: .netlify (Netlify CLI local state), netlify.toml.bak, /upload/ (user's private uploads)
+- Verified production build succeeds: `bun run build` completed in ~5.2s with Turbopack. Output:
+  • / (Static) — prerendered as static content
+  • /_not-found (Static)
+  • /api (Dynamic — server-rendered on demand, handled by Netlify Functions)
+- Installed Netlify CLI globally: `npm install -g netlify-cli` → netlify-cli/26.1.0 (linux-x64, node-v24.16.0)
+- Created /home/z/my-project/DEPLOY.md — comprehensive deployment guide with 3 options:
+  • Option A: Netlify CLI (fastest, no GitHub needed) — `netlify login` → `netlify init` → `netlify deploy --build --prod`
+  • Option B: GitHub + Netlify Dashboard (best for ongoing updates) — push to GitHub → connect repo at app.netlify.com/start → auto-deploys on every push
+  • Option C: Drag & drop (not recommended for Next.js)
+  • Plus post-deploy tips (custom domain, HTTPS, analytics) and a troubleshooting table
+- Committed both files to git:
+  • Commit 13fef1a: "Add Netlify deployment config (netlify.toml + gitignore)"
+  • Commit 7ba0670: "Add deployment guide (DEPLOY.md)"
+
+Stage Summary:
+- Project is 100% deployment-ready for Netlify:
+  • ✅ Production build verified (5.2s, 0 errors)
+  • ✅ netlify.toml config in place with Next.js plugin
+  • ✅ .gitignore updated to keep the repo clean
+  • ✅ Netlify CLI installed locally (v26.1.0)
+  • ✅ DEPLOY.md guide with step-by-step instructions for 2 deployment paths
+  • ✅ All changes committed to git
+- User can now deploy by either:
+  1. Running `netlify login` + `netlify init` + `netlify deploy --build --prod` from /home/z/my-project (Option A — fastest)
+  2. Pushing the repo to GitHub and connecting it at https://app.netlify.com/start under the margie-mk49 team (Option B — best for ongoing updates)
+- The deployed site will be live at https://<site-name>.netlify.app and the user can add a custom domain (e.g. jojovanilla.com) from the Netlify dashboard.
