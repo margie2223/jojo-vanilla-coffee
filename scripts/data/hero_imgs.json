@@ -1,0 +1,46 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "vanilla farm soil with green leaves and farming tools close up dark earthy"
+✅ Got 5 images
+{
+  "success": true,
+  "query": "vanilla farm soil with green leaves and farming tools close up dark earthy",
+  "count": 5,
+  "ranked": false,
+  "results": [
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/0dbb78efab81.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "975px",
+      "original_height": "1390px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/8462fbf253ac.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "864px",
+      "original_height": "1390px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/2954fb11874a.jpg",
+      "caption": "",
+      "source": "The Creek Line House -",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/c2cf58336c56.jpeg",
+      "caption": "",
+      "source": "In the Vintage Kitchen",
+      "original_width": "768px",
+      "original_height": "1024px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/604ed50956c5.jpg",
+      "caption": "",
+      "source": "Dreamstime.com",
+      "original_width": "1600px",
+      "original_height": "1155px"
+    }
+  ]
+}

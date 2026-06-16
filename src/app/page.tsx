@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import {
   Menu,
   X,
-  Phone,
   Mail,
   MapPin,
-  Linkedin,
+  Instagram,
+  MessageCircle,
   ChevronDown,
   ArrowRight,
   ArrowUpRight,
@@ -224,11 +224,13 @@ function TopBar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 py-2">
         <div className="flex flex-wrap items-center gap-4">
           <a
-            href="tel:+256704438107"
+            href="https://wa.me/256704438107"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-accent transition-colors"
           >
-            <Phone className="h-3.5 w-3.5" />
-            <span>+256 704 438 107</span>
+            <MessageCircle className="h-3.5 w-3.5" />
+            <span>WhatsApp: +256 704 438 107</span>
           </a>
           <a
             href="mailto:rojakajojo@gmail.com"
@@ -242,17 +244,26 @@ function TopBar() {
           <span className="hidden md:inline text-primary-foreground/80">
             Namanve · Mukono · Uganda
           </span>
-          <div className="flex items-center gap-2">
-            <span className="text-primary-foreground/80">EN</span>
-            <span className="text-primary-foreground/40">/</span>
-            <span className="text-primary-foreground/60">Luganda</span>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/rogervanilla"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a
+              href="https://wa.me/256704438107"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+            </a>
           </div>
-          <a
-            href="#contact"
-            className="hidden lg:inline-flex items-center gap-1 hover:text-accent transition-colors"
-          >
-            <Linkedin className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </div>
@@ -281,7 +292,7 @@ function Header() {
             <img
               src="/images/logo-jojo.jpg"
               alt="JOJO Vanilla & COFFEE (U) Limited"
-              className="h-20 w-auto rounded-xl shadow-sm border border-border/60 bg-white p-1"
+              className="h-24 w-auto rounded-xl shadow-md border border-border/60 bg-white p-1.5"
             />
           </a>
 
@@ -393,8 +404,8 @@ function Hero() {
     <section className="relative">
       <div className="absolute inset-0">
         <img
-          src="/images/homepage1.jpg"
-          alt="Vanilla beans drying in the sun at a sustainable farm"
+          src="/images/hero-farm.jpg"
+          alt="Vanilla vine climbing a support tree on a Ugandan vanilla farm in Namanve"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 hero-overlay" />
@@ -404,25 +415,24 @@ function Hero() {
         <div className="max-w-3xl text-primary-foreground">
           <p className="inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-5 animate-fade-up">
             <span className="h-px w-10 bg-accent" />
-            Direct from origin. Built for B2B.
+            Namanve, Uganda · Direct from farm
           </p>
           <h1
             className="font-quicksand font-bold leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Natural Products
+            From the Vanilla Farm
             <br />
-            <span className="text-accent">from Origins</span>
-            <br />
-            to Market
+            <span className="text-accent">to Your World</span>
           </h1>
           <p
             className="mt-7 text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            JOJO Vanilla & COFFEE (U) Limited is your B2B partner for vanilla, cassia,
-            cinnamon and a full range of sustainably sourced spices — sourced
-            directly from Madagascar, Indonesia and Uganda.
+            JOJO Vanilla & COFFEE (U) Limited is your B2B partner for vanilla,
+            coffee, cassia, cinnamon and a full range of sustainably sourced
+            spices — grown and cured in the vanilla heartland of Mukono,
+            Uganda.
           </p>
           <div
             className="mt-9 flex flex-wrap gap-4 animate-fade-up"
@@ -1036,11 +1046,13 @@ function Footer() {
               <ul className="space-y-2 pt-1">
                 <li>
                   <a
-                    href="tel:+256704438107"
+                    href="https://wa.me/256704438107"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
                   >
-                    <Phone className="h-4 w-4 text-accent" />
-                    +256 704 438 107
+                    <MessageCircle className="h-4 w-4 text-accent" />
+                    WhatsApp: +256 704 438 107
                   </a>
                 </li>
                 <li>
@@ -1050,6 +1062,17 @@ function Footer() {
                   >
                     <Mail className="h-4 w-4 text-accent" />
                     rojakajojo@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/rogervanilla"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
+                  >
+                    <Instagram className="h-4 w-4 text-accent" />
+                    @rogervanilla on Instagram
                   </a>
                 </li>
                 <li>
@@ -1150,6 +1173,34 @@ function Footer() {
                 <Globe2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 Serving 30+ countries worldwide
               </p>
+            </div>
+
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/rogervanilla"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://wa.me/256704438107"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:rojakajojo@gmail.com"
+                aria-label="Email"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>

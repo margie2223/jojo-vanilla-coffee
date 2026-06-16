@@ -1,0 +1,53 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "vanilla plantation Uganda farmer tending vines green leaves"
+✅ Got 6 images
+{
+  "success": true,
+  "query": "vanilla plantation Uganda farmer tending vines green leaves",
+  "count": 6,
+  "ranked": false,
+  "results": [
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/dacc71a1f274.jpg",
+      "caption": "",
+      "source": "World Vision International",
+      "original_width": "2667px",
+      "original_height": "4000px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/e579bc834e18.png",
+      "caption": "",
+      "source": "VanillaPura",
+      "original_width": "1248px",
+      "original_height": "832px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/7e4ed86893dd.jpg",
+      "caption": "",
+      "source": "David Vanille",
+      "original_width": "1200px",
+      "original_height": "1200px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/101523da24d2.jpg",
+      "caption": "",
+      "source": "Trellis",
+      "original_width": "1490px",
+      "original_height": "995px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/a08d16a736c2.jpg",
+      "caption": "",
+      "source": "SupplySide Food & Beverage Journal",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/a9387debdbe6.jpg",
+      "caption": "",
+      "source": "The Dark Orchid",
+      "original_width": "980px",
+      "original_height": "1307px"
+    }
+  ]
+}
