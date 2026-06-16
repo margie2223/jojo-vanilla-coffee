@@ -1,0 +1,25 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "Indonesia spice farm tropical green hills"
+✅ Got 2 images
+{
+  "success": true,
+  "query": "Indonesia spice farm tropical green hills",
+  "count": 2,
+  "ranked": false,
+  "results": [
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/59d7d611c852.png",
+      "caption": "",
+      "source": "GetYourGuide",
+      "original_width": "1448px",
+      "original_height": "1086px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/6d1f12925f30.jpg",
+      "caption": "",
+      "source": "What an Amazing World!",
+      "original_width": "1200px",
+      "original_height": "800px"
+    }
+  ]
+}
