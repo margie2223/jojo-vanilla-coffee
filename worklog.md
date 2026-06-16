@@ -193,3 +193,38 @@ Stage Summary:
 - Brand name properly cased as "JOJO Vanilla & Coffee (U) Limited" everywhere (page content, footer, copyright, browser tab title, SEO metadata).
 - Lint clean, dev log clean, browser-verified.
 - Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
+
+---
+Task ID: 7
+Agent: main (Super Z)
+Task: (a) Add the user's uploaded vanilla bean bundles photo somewhere on the site; (b) Make the WhatsApp logo green (#25D366) with an eye-catching blinking animation.
+
+Work Log:
+- Located the user's uploaded photo at /home/z/my-project/upload/WhatsApp Image 2026-06-16 at 10.07.52 PM.jpeg (607x1080 portrait JPEG). VLM analysis confirmed it shows two bundles of dried vanilla beans tied with yellow rubber bands on burlap fabric, with a TikTok watermark (@jojovanillacoffee) in the bottom-right corner.
+- Wrote /home/z/my-project/scripts/crop_vanilla_photo.py to crop the TikTok watermark: removed 22% of width from the right and 15% of height from the bottom. Result: 473x918 clean image saved to /public/images/vanilla-beans-bundles.jpg (71KB). VLM confirmed no watermark remains.
+- Added WhatsApp brand green (#25D366) to the Tailwind @theme block as --color-whatsapp. This makes Tailwind generate proper text-whatsapp / bg-whatsapp / border-whatsapp utilities. Removed the manual CSS class definitions that weren't being picked up.
+- Added two CSS animations to globals.css:
+  • whatsapp-pulse: strong scale + box-shadow ripple effect (1.8s loop) — used on the floating button
+  • whatsapp-blink: subtle opacity + box-shadow pulse (1.8s loop) — used on inline icons and buttons
+  • Added prefers-reduced-motion media query to disable animations for accessibility.
+- Created a new ProductSpotlight component (inserted between OurProducts and News in the page render). It features:
+  • LEFT: The user's vanilla bean bundles photo in a large 520px-tall rounded card with shadow-2xl. Two floating badges: a gold rotated "Grade A1 Premium" circle (top-right) and a navy "Single Origin · Namanve, Mukono" rectangle (bottom-left).
+  • RIGHT: "Product Spotlight" eyebrow, heading "Hand-cured Ugandan vanilla, grade A1" (with "grade A1" in gold), two paragraphs of body copy about the curing process (sorting, sweating under wool blankets, sun-drying, conditioning), three stat boxes (17% min vanillin, 2y shelf life, A1 grade), and two CTA buttons: navy "Request a Quote" + green blinking "WhatsApp Us" button.
+- Created a FloatingWhatsApp component — a fixed-position 64x64 green circular button at bottom-right (z-50) with the strong whatsapp-pulse animation, always visible as the user scrolls. Links to https://wa.me/256704438107.
+- Updated all 4 existing WhatsApp icons to use the green color + blink animation:
+  • Top bar inline WhatsApp icon (next to "WhatsApp: +256 704 438 107" text): text-whatsapp + animate-whatsapp-blink
+  • Top bar circular WhatsApp icon (next to Instagram): bg-whatsapp text-white + animate-whatsapp-blink
+  • Footer contact column WhatsApp icon: text-whatsapp + animate-whatsapp-blink
+  • Footer "Get in touch" circular WhatsApp icon: bg-whatsapp text-white + animate-whatsapp-blink
+- Added <ProductSpotlight /> and <FloatingWhatsApp /> to the page render.
+- Ran `bun run lint` — 0 errors, 0 warnings. Dev log clean.
+- Verified via DOM inspection: all 6 WhatsApp elements on the page now have computed color/background = rgb(37, 211, 102) (#25D366 WhatsApp green). The floating button and circular icon buttons have green backgrounds with white icons; the inline icons have green icon color.
+- Verified via Agent Browser: ProductSpotlight section renders correctly — vanilla bean bundles photo visible, heading "Hand-cured Ugandan vanilla, grade A1" present, floating Grade A1 + Single Origin badges visible, stat boxes (17%/2y/A1) visible, green "WhatsApp Us" button visible. Floating green WhatsApp button visible at bottom-right.
+
+Stage Summary:
+- User's vanilla bean bundles photo added to a new "Product Spotlight" section between OurProducts and News — features the photo in a large card with floating Grade A1 + Single Origin badges, curing-process body copy, 3 stat boxes (17% vanillin / 2y shelf life / A1 grade), and dual CTAs (Request a Quote + green blinking WhatsApp Us button).
+- All WhatsApp touchpoints are now WhatsApp brand green (#25D366): 2 inline icons (top bar + footer contact), 2 circular icon buttons (top bar + footer Get in touch), 1 ProductSpotlight "WhatsApp Us" button, and 1 floating button (fixed bottom-right, always visible). All have eye-catching blink/pulse animations (1.8s loop).
+- A floating green WhatsApp button (64x64, fixed bottom-right, z-50) with strong pulse animation is always visible as the user scrolls — the most eye-catching WhatsApp touchpoint.
+- TikTok watermark cleanly cropped from the user's photo before publishing.
+- Lint clean, dev log clean, browser-verified.
+- Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/

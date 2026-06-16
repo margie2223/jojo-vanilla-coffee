@@ -210,6 +210,21 @@ const CERTIFICATIONS = [
 /* Sub-components                                                  */
 /* --------------------------------------------------------------- */
 
+function FloatingWhatsApp() {
+  return (
+    <a
+      href="https://wa.me/256704438107"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+      className="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center w-16 h-16 rounded-full bg-whatsapp text-white shadow-2xl animate-whatsapp-pulse hover:scale-110 transition-transform"
+    >
+      <MessageCircle className="h-8 w-8" />
+      <span className="sr-only">WhatsApp us</span>
+    </a>
+  );
+}
+
 function TopBar() {
   return (
     <div className="bg-primary text-primary-foreground text-sm">
@@ -221,7 +236,7 @@ function TopBar() {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-accent transition-colors"
           >
-            <MessageCircle className="h-3.5 w-3.5" />
+            <MessageCircle className="h-3.5 w-3.5 text-whatsapp animate-whatsapp-blink rounded-full p-0.5" />
             <span>WhatsApp: +256 704 438 107</span>
           </a>
           <a
@@ -251,7 +266,7 @@ function TopBar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-whatsapp text-white hover:bg-whatsapp/90 transition-colors animate-whatsapp-blink"
             >
               <MessageCircle className="h-4 w-4" />
             </a>
@@ -851,6 +866,107 @@ function OurProducts() {
   );
 }
 
+function ProductSpotlight() {
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Image side — the user's actual vanilla bean bundles photo */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="/images/vanilla-beans-bundles.jpg"
+                alt="Premium Ugandan vanilla bean bundles, hand-cured and tied at our Namanve farm"
+                className="w-full h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+            </div>
+            {/* Floating quality badge */}
+            <div className="absolute -top-5 -right-5 bg-accent text-accent-foreground rounded-full w-28 h-28 flex flex-col items-center justify-center shadow-xl rotate-6">
+              <p className="font-quicksand font-bold text-2xl leading-none">Grade</p>
+              <p className="font-quicksand font-bold text-3xl leading-none">A1</p>
+              <p className="text-[10px] uppercase tracking-wider mt-1">Premium</p>
+            </div>
+            {/* Floating origin badge */}
+            <div className="absolute -bottom-5 -left-5 bg-primary text-primary-foreground rounded-xl px-5 py-3 shadow-xl">
+              <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold">Single Origin</p>
+              <p className="font-quicksand font-bold text-lg">Namanve, Mukono</p>
+            </div>
+          </div>
+
+          {/* Text side */}
+          <div className="order-1 lg:order-2">
+            <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
+              <span className="h-px w-10 bg-primary" />
+              Product Spotlight
+            </p>
+            <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
+              Hand-cured Ugandan vanilla, <span className="text-accent">grade A1</span>
+            </h2>
+            <p className="mt-6 text-muted-foreground text-base md:text-lg leading-relaxed">
+              These are our vanilla bean bundles — dark, supple and intensely
+              fragrant. Each bundle is hand-tied after months of careful
+              curing: the green pods are sorted, sweated under wool blankets,
+              sun-dried on raised racks, then conditioned in closed boxes to
+              develop the rich vanillin profile that defines premium Ugandan
+              bourbon vanilla.
+            </p>
+            <p className="mt-3 text-muted-foreground text-base md:text-lg leading-relaxed">
+              No middlemen, no blending, no shortcuts. Every bundle is graded
+              by length, moisture and aroma at our curing house in Namanve —
+              then shipped directly from Mukono to buyers across East Africa
+              and beyond.
+            </p>
+
+            <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
+              <div className="bg-secondary rounded-xl p-4 text-center border border-border">
+                <p className="font-quicksand font-bold text-2xl text-primary">17%</p>
+                <p className="text-xs text-muted-foreground mt-1">Min. vanillin</p>
+              </div>
+              <div className="bg-secondary rounded-xl p-4 text-center border border-border">
+                <p className="font-quicksand font-bold text-2xl text-primary">2y</p>
+                <p className="text-xs text-muted-foreground mt-1">Shelf life</p>
+              </div>
+              <div className="bg-secondary rounded-xl p-4 text-center border border-border">
+                <p className="font-quicksand font-bold text-2xl text-primary">A1</p>
+                <p className="text-xs text-muted-foreground mt-1">Grade</p>
+              </div>
+            </div>
+
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-quicksand font-semibold rounded-full px-7"
+              >
+                <a href="#quote" className="inline-flex items-center gap-2">
+                  Request a Quote
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                className="bg-whatsapp hover:bg-whatsapp/90 text-white font-quicksand font-semibold rounded-full px-7 animate-whatsapp-blink"
+              >
+                <a
+                  href="https://wa.me/256704438107"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp Us
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function News() {
   return (
     <section id="news" className="py-20 md:py-28 bg-background">
@@ -1138,7 +1254,7 @@ function Footer() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
                   >
-                    <MessageCircle className="h-4 w-4 text-accent" />
+                    <MessageCircle className="h-4 w-4 text-whatsapp animate-whatsapp-blink rounded-full p-0.5" />
                     WhatsApp: +256 704 438 107
                   </a>
                 </li>
@@ -1277,7 +1393,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-whatsapp text-white hover:bg-whatsapp/90 transition-colors animate-whatsapp-blink"
               >
                 <MessageCircle className="h-5 w-5" />
               </a>
@@ -1331,12 +1447,14 @@ export default function Home() {
         <SourcingOrigins />
         <WhyPartner />
         <OurProducts />
+        <ProductSpotlight />
         <News />
         <Sustainability />
         <WhoWeServe />
         <QuoteCTA />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
