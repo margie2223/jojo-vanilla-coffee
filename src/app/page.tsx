@@ -292,7 +292,7 @@ function Header() {
             <img
               src="/images/logo-jojo.jpg"
               alt="JOJO Vanilla & COFFEE (U) Limited"
-              className="h-24 w-auto rounded-xl shadow-md border border-border/60 bg-white p-1.5"
+              className="h-24 w-auto rounded-xl shadow-lg bg-accent p-1.5"
             />
           </a>
 
@@ -552,6 +552,61 @@ function CertifiedSupplier() {
                 <p className="text-[10px] uppercase tracking-wider">Sourcing</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DynamicBanner() {
+  return (
+    <section className="relative overflow-hidden bg-primary">
+      {/* Full-bleed looping video of dried vanilla beans in wicker baskets */}
+      <div className="absolute inset-0">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/vanilla-farm.webp"
+        >
+          <source src="/images/vanilla-beans.webm" type="video/webm" />
+          <source src="/images/vanilla-beans.mp4" type="video/mp4" />
+        </video>
+        {/* Slight dark overlay so the white text reads cleanly */}
+        <div className="absolute inset-0 bg-primary/55" />
+      </div>
+
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center text-primary-foreground">
+        <p className="inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
+          <span className="h-px w-10 bg-accent" />
+          From Our Curing House
+          <span className="h-px w-10 bg-accent" />
+        </p>
+        <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight max-w-3xl mx-auto">
+          Every bean tells a story of <span className="text-accent">patience</span> and craft
+        </h2>
+        <p className="mt-6 text-base md:text-lg text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+          After harvest, our vanilla beans are sorted, sweated, dried and conditioned for
+          months — developing the rich, complex aroma that defines premium Ugandan vanilla.
+          Watch the journey from green pod to fragrant black gold.
+        </p>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-6 text-sm font-quicksand">
+          <div className="flex items-center gap-2">
+            <Sprout className="h-5 w-5 text-accent" />
+            <span>Hand-pollinated</span>
+          </div>
+          <span className="text-primary-foreground/30">•</span>
+          <div className="flex items-center gap-2">
+            <Leaf className="h-5 w-5 text-accent" />
+            <span>Slow-cured</span>
+          </div>
+          <span className="text-primary-foreground/30">•</span>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="h-5 w-5 text-accent" />
+            <span>Quality-graded</span>
           </div>
         </div>
       </div>
@@ -1240,6 +1295,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <CertifiedSupplier />
+        <DynamicBanner />
         <SourcingOrigins />
         <WhyPartner />
         <OurProducts />

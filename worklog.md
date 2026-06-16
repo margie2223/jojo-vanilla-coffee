@@ -113,3 +113,34 @@ Stage Summary:
 - Country is Uganda only — confirmed no remaining references to Netherlands, USA, Rotterdam, Breinigsville, or any other country.
 - Lint clean, dev log clean, browser-verified on desktop.
 - Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
+
+---
+Task ID: 5
+Agent: main (Super Z)
+Task: (a) Add dynamic images/video somewhere on the site to give it life (user uploaded a vanilla beans video); (b) Give the logo a nice background color (no outline, clearly visible).
+
+Work Log:
+- Found the user's uploaded video at /home/z/my-project/upload/WhatsApp Video 2026-06-16 at 10.07.51 PM.mp4 (3.7MB, 360x640 portrait, 19.9s).
+- Tried to analyze via z-ai vision API directly — failed with "image input format/parse error" because the file was too large.
+- Extracted 5 frames at 4-second intervals via ffmpeg and analyzed them with VLM. Result: video shows dried vanilla beans (dark brown glossy pods) neatly arranged in wicker baskets in a wooden storage/processing space. Perfect on-brand visual for a vanilla company.
+- Converted the video to two web-friendly formats using ffmpeg:
+  • WebM (VP9, 720px wide, 24fps, 600k bitrate, CRF 36, no audio) — 1.6MB
+  • MP4 (H.264, 640px wide, 20fps, veryfast preset, CRF 32, no audio, 15s trim, faststart) — 1.1MB
+  • Both saved to /public/images/vanilla-beans.{webm,mp4}
+- Added a new DynamicBanner component (inserted between CertifiedSupplier and SourcingOrigins in the page render). It features:
+  • Full-bleed autoplay/loop/muted/playsInline <video> element with both WebM and MP4 sources (browser picks the best one — WebM for modern browsers, MP4 fallback for Safari)
+  • poster="/images/vanilla-farm.webp" as fallback before video loads
+  • Semi-transparent navy overlay (bg-primary/55) so white text reads cleanly over the video
+  • Centered content: gold "From Our Curing House" eyebrow, large heading "Every bean tells a story of patience and craft" (with "patience" highlighted in gold), body copy about sorting/sweating/drying/conditioning, and three icon+text labels (Hand-pollinated • Slow-cured • Quality-graded) with Sprout/Leaf/ShieldCheck icons in gold
+- Verified the video element via direct DOM inspection: readyState=4 (HAVE_ENOUGH_DATA), paused=false, currentTime=6.23s of 19.9s duration, using the WebM source. Video is actually playing in the browser.
+- Updated logo styling in the Header: replaced "border border-border/60 bg-white shadow-md" with "bg-accent shadow-lg" (gold background, stronger shadow, no CSS border). The logo image itself has a white interior, so the visual effect is a gold frame around a white-centered circular elephant emblem — stands out prominently against the navy top bar.
+- Ran `bun run lint` — 0 errors, 0 warnings. Dev log: only successful GET / 200 responses, no video load errors, no console errors.
+- Verified via Agent Browser on desktop (1440x900) and mobile (390x844):
+  • Desktop: logo shows gold frame with no outline, clearly visible against navy. Video section displays heading, body, and 3 icon labels correctly. Video is playing.
+  • Mobile: scrolled to video section programmatically (via heading text match), confirmed heading "Every bean tells a story of patience and craft" is visible, all 3 icon labels present, layout looks good on mobile.
+
+Stage Summary:
+- Site now has a dynamic video section showing dried vanilla beans in wicker baskets — gives the page life and motion between the static CertifiedSupplier and SourcingOrigins sections. Video autoplays muted and loops seamlessly, works on both desktop and mobile, uses WebM (1.6MB) for modern browsers with MP4 (1.1MB) fallback.
+- Logo restyled: removed the white background + border, replaced with a gold (accent) background that creates a premium gold frame around the white-centered circular elephant emblem. Logo is now clearly visible against the navy top bar without any explicit outline.
+- Lint clean, dev log clean, browser-verified on both desktop and mobile.
+- Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
