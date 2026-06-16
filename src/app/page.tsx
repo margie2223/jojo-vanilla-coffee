@@ -63,9 +63,8 @@ const NAV = [
     label: "Origins",
     href: "#origins",
     children: [
-      { label: "Madagascar", href: "#origins" },
-      { label: "Indonesia", href: "#origins" },
       { label: "Uganda", href: "#origins" },
+      { label: "Countries We Supply", href: "#origins" },
     ],
   },
   {
@@ -82,26 +81,19 @@ const NAV = [
 
 const ORIGINS = [
   {
-    name: "Madagascar",
-    image:
-      "https://sfile.chatglm.cn/images-ppt/d471513fd42b.jpg",
-    description:
-      "A leading origin for premium vanilla beans, we also source bulk cloves, cinnamon, and traceable natural spices.",
-  },
-  {
     name: "Uganda",
     image:
       "https://sfile.chatglm.cn/images-ppt/b9951a0cf83c.png",
     description:
-      "Uganda is Africa's second largest origin for vanilla exports, known for bold flavor profiles and reliable sourcing in bulk volumes.",
+      "Our home and only sourcing origin. From the lush vanilla farms of Namanve, Mukono, we hand-pollinate, slow-cure and quality-grade every bean ourselves — full visibility from farmer to container.",
   },
-  {
-    name: "Indonesia",
-    image:
-      "https://sfile.chatglm.cn/images-ppt/59d7d611c852.png",
-    description:
-      "Indonesia is a key origin for many natural products such as cassia, nutmeg and vanilla.",
-  },
+];
+
+const SUPPLY_COUNTRIES = [
+  { name: "Kenya", note: "East African Community" },
+  { name: "Rwanda", note: "East African Community" },
+  { name: "Burundi", note: "East African Community" },
+  { name: "DR Congo", note: "Great Lakes region" },
 ];
 
 const WHY_PARTNER = [
@@ -109,13 +101,13 @@ const WHY_PARTNER = [
     icon: Ship,
     title: "Reliable Logistics & Scalability",
     description:
-      "With warehousing hubs in Europe & USA, and a dedicated logistics team, we ensure timely deliveries and scalable volume for global operations.",
+      "With warehousing and dispatch from Mukono, plus a dedicated logistics team, we ensure timely deliveries and scalable volume across East Africa and beyond.",
   },
   {
     icon: Sprout,
     title: "Traceable & Transparent Sourcing",
     description:
-      "We operate directly from origin regions like Madagascar, ensuring full visibility from farmer to factory. No middlemen. No uncertainty.",
+      "We operate directly from our single origin in Namanve, Mukono, ensuring full visibility from farmer to factory. No middlemen. No uncertainty.",
   },
   {
     icon: ShieldCheck,
@@ -131,15 +123,15 @@ const PRODUCTS = [
     image:
       "https://sfile.chatglm.cn/images-ppt/66e4a873253b.jpg",
     description:
-      "Planifolia and Tahitensis varieties from Madagascar, Indonesia and Uganda.",
-    tag: "Bourbon & Tahitensis",
+      "Planifolia and Tahitensis varieties, hand-pollinated and slow-cured at our Namanve farm in Mukono, Uganda.",
+    tag: "Single Origin · Uganda",
   },
   {
     name: "Ceylon & Cassia",
     image:
       "https://sfile.chatglm.cn/images-ppt/bb0873e38481.jpg",
     description:
-      "Indonesian, Vietnamese and Sri Lankan, selected for consistent oil content and color.",
+      "Locally grown and carefully selected Ugandan cassia, chosen for consistent oil content and warm color.",
     tag: "Cinnamon Bark",
   },
   {
@@ -172,7 +164,7 @@ const NEWS = [
   {
     title: "Vanilla Global Market Report – July 2024",
     excerpt:
-      "Production outlook from Madagascar, Uganda and Indonesia, price trends across planifolia and tahitensis varieties, and what buyers should plan for in the next 12–18 months.",
+      "Production outlook from Uganda, price trends across planifolia and tahitensis varieties, and what East African buyers should plan for in the next 12–18 months.",
     date: "July 2024",
     category: "Market Report",
     image: "/images/vanilla-farm.webp",
@@ -282,8 +274,8 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b transition-shadow ${
-        scrolled ? "shadow-md border-border" : "border-transparent"
+      className={`sticky top-0 z-50 bg-primary border-b transition-shadow ${
+        scrolled ? "shadow-md border-primary-foreground/10" : "border-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -291,8 +283,8 @@ function Header() {
           <a href="#" className="flex items-center shrink-0">
             <img
               src="/images/logo-jojo.jpg"
-              alt="JOJO Vanilla & COFFEE (U) Limited"
-              className="h-24 w-auto rounded-xl shadow-lg bg-accent p-1.5"
+              alt="JOJO Vanilla & Coffee (U) Limited"
+              className="h-24 w-auto rounded-xl shadow-lg"
             />
           </a>
 
@@ -302,11 +294,11 @@ function Header() {
               {NAV.map((item) =>
                 item.children ? (
                   <NavigationMenuItem key={item.label}>
-                    <NavigationMenuTrigger className="bg-transparent hover:bg-transparent data-[state=open]:bg-transparent font-quicksand font-semibold text-foreground/90 hover:text-primary text-[15px]">
+                    <NavigationMenuTrigger className="bg-transparent hover:bg-transparent data-[state=open]:bg-transparent font-quicksand font-semibold text-primary-foreground/90 hover:text-accent text-[15px]">
                       {item.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[260px] gap-1 p-2">
+                      <ul className="grid w-[260px] gap-1 p-2 bg-popover text-popover-foreground">
                         {item.children.map((child) => (
                           <li key={child.label}>
                             <NavigationMenuLink
@@ -324,7 +316,7 @@ function Header() {
                   <NavigationMenuItem key={item.label}>
                     <NavigationMenuLink
                       asChild
-                      className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-transparent font-quicksand font-semibold text-foreground/90 hover:text-primary text-[15px]`}
+                      className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-transparent font-quicksand font-semibold text-primary-foreground/90 hover:text-accent text-[15px]`}
                     >
                       <a href={item.href}>{item.label}</a>
                     </NavigationMenuLink>
@@ -337,7 +329,7 @@ function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-quicksand font-semibold rounded-full px-6"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-quicksand font-semibold rounded-full px-6"
             >
               <a href="#quote">Request a Quote</a>
             </Button>
@@ -346,7 +338,7 @@ function Header() {
           {/* Mobile toggle */}
           <button
             type="button"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-accent/30"
+            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-primary-foreground hover:bg-primary-foreground/10"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle navigation"
           >
@@ -357,13 +349,13 @@ function Header() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden bg-card border-t border-border">
+        <div className="lg:hidden bg-primary border-t border-primary-foreground/10">
           <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4 space-y-1">
             {NAV.map((item) => (
-              <div key={item.label} className="border-b border-border/60 last:border-0">
+              <div key={item.label} className="border-b border-primary-foreground/10 last:border-0">
                 <a
                   href={item.href}
-                  className="block py-3 font-quicksand font-semibold text-foreground hover:text-primary"
+                  className="block py-3 font-quicksand font-semibold text-primary-foreground hover:text-accent"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
@@ -374,7 +366,7 @@ function Header() {
                       <a
                         key={c.label}
                         href={c.href}
-                        className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
+                        className="block py-1.5 text-sm text-primary-foreground/70 hover:text-accent"
                         onClick={() => setMobileOpen(false)}
                       >
                         {c.label}
@@ -386,7 +378,7 @@ function Header() {
             ))}
             <Button
               asChild
-              className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground font-quicksand font-semibold rounded-full"
+              className="w-full mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-quicksand font-semibold rounded-full"
             >
               <a href="#quote" onClick={() => setMobileOpen(false)}>
                 Request a Quote
@@ -429,7 +421,7 @@ function Hero() {
             className="mt-7 text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            JOJO Vanilla & COFFEE (U) Limited is your B2B partner for vanilla,
+            JOJO Vanilla & Coffee (U) Limited is your B2B partner for vanilla,
             coffee, cassia, cinnamon and a full range of sustainably sourced
             spices — grown and cured in the vanilla heartland of Mukono,
             Uganda.
@@ -464,9 +456,9 @@ function Hero() {
       <div className="relative bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
           {[
-            { icon: Globe2, label: "3 Origin Countries" },
+            { icon: Globe2, label: "Single Origin · Uganda" },
             { icon: ShieldCheck, label: "Globally Certified" },
-            { icon: Truck, label: "EU & USA Warehousing" },
+            { icon: Truck, label: "Dispatch from Mukono" },
             { icon: Leaf, label: "Sustainable Sourcing" },
           ].map((c) => (
             <div key={c.label} className="flex items-center gap-2 justify-center md:justify-start">
@@ -495,9 +487,9 @@ function CertifiedSupplier() {
             </h2>
             <div className="mt-6 space-y-5 text-muted-foreground text-base md:text-lg leading-relaxed">
               <p>
-                At JOJO Vanilla & COFFEE (U) Limited, we specialize in the direct
+                At JOJO Vanilla & Coffee (U) Limited, we specialize in the direct
                 sourcing and global distribution of high-quality natural
-                ingredients. With local teams in origin countries, we manage
+                ingredients. With our local team in Namanve, Mukono, we manage
                 each step of the supply chain to guarantee product integrity,
                 food safety compliance, and optimized availability.
               </p>
@@ -621,54 +613,94 @@ function SourcingOrigins() {
         <div className="max-w-3xl mb-14">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
             <span className="h-px w-10 bg-primary" />
-            Sourcing Origins
+            Our Origin
           </p>
           <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
-            Direct relationships with producers, on the ground
+            One origin. Uganda. The rest of the world is our market.
           </h2>
           <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">
-            Our sourcing model is built on direct relationships with producers
-            in origin countries, ensuring quality, consistency, and
-            traceability. From East Africa to South East Asia, our teams work on
-            the ground to monitor harvests, control quality, and support
-            responsible sourcing.
+            Our sourcing model is built on direct relationships with farming
+            families in Namanve, Mukono. We work on the ground to monitor
+            harvests, control quality, and support responsible sourcing — every
+            bean is hand-pollinated, slow-cured and quality-graded under our
+            own supervision.
           </p>
           <p className="mt-3 text-muted-foreground text-base md:text-lg leading-relaxed">
-            This local footprint allows us to meet international compliance
-            standards while maintaining full visibility from farmer to
-            container.
+            From this single origin, we supply premium Ugandan vanilla, coffee
+            and spices to buyers across East Africa and beyond.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          {/* Single origin — Uganda */}
           {ORIGINS.map((o) => (
             <a
               key={o.name}
               href="#origins"
-              className="group relative overflow-hidden rounded-2xl shadow-md bg-card border border-border"
+              className="group relative overflow-hidden rounded-2xl shadow-lg bg-card border border-border min-h-[420px]"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="absolute inset-0">
                 <img
                   src={o.image}
                   alt={`${o.name} sourcing region`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-primary-foreground">
-                <h3 className="font-quicksand font-bold text-2xl mb-2">
+              <div className="relative h-full flex flex-col justify-end p-8 text-primary-foreground">
+                <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-2">
+                  Single Origin
+                </p>
+                <h3 className="font-quicksand font-bold text-4xl mb-3">
                   {o.name}
                 </h3>
-                <p className="text-sm text-primary-foreground/90 leading-relaxed">
+                <p className="text-base text-primary-foreground/90 leading-relaxed max-w-md">
                   {o.description}
                 </p>
-                <span className="inline-flex items-center gap-1.5 mt-4 text-accent font-quicksand font-semibold text-sm">
-                  Discover sourcing
+                <span className="inline-flex items-center gap-1.5 mt-5 text-accent font-quicksand font-semibold text-sm">
+                  Grown in Namanve, Mukono
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </span>
               </div>
             </a>
           ))}
+
+          {/* Supply countries */}
+          <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-10 shadow-lg flex flex-col">
+            <p className="inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-3">
+              <span className="h-px w-10 bg-accent" />
+              Countries We Supply
+            </p>
+            <h3 className="font-quicksand font-bold text-2xl md:text-3xl mb-3">
+              From Uganda to the region
+            </h3>
+            <p className="text-primary-foreground/85 text-base leading-relaxed mb-6">
+              From our single origin in Mukono, we proudly supply premium
+              Ugandan vanilla, coffee and spices to buyers across the East
+              African Community and the Great Lakes region.
+            </p>
+
+            <ul className="space-y-3 mb-6">
+              {SUPPLY_COUNTRIES.map((c) => (
+                <li
+                  key={c.name}
+                  className="flex items-center justify-between gap-4 pb-3 border-b border-primary-foreground/10 last:border-0"
+                >
+                  <span className="font-quicksand font-semibold text-lg flex items-center gap-2.5">
+                    <Globe2 className="h-5 w-5 text-accent" />
+                    {c.name}
+                  </span>
+                  <span className="text-xs uppercase tracking-wider text-primary-foreground/60">
+                    {c.note}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-auto text-sm text-primary-foreground/70 italic">
+              Plus global export to 30+ countries worldwide on request.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -690,7 +722,7 @@ function WhyPartner() {
           </h2>
           <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">
             Three reasons procurement teams, R&amp;D departments, and sourcing
-            professionals rely on JOJO Vanilla & COFFEE (U) Limited for vanilla and
+            professionals rely on JOJO Vanilla & Coffee (U) Limited for vanilla and
             spices at scale.
           </p>
         </div>
@@ -912,9 +944,9 @@ function Sustainability() {
             Embedded in every part of our global sourcing strategy
           </h2>
           <p className="mt-6 text-primary-foreground/90 text-base md:text-lg leading-relaxed">
-            At JOJO Vanilla & COFFEE (U) Limited, sustainability is embedded in every
+            At JOJO Vanilla & Coffee (U) Limited, sustainability is embedded in every
             part of our global sourcing strategy. We work directly with farming
-            communities in origin countries to ensure a fair, traceable, and
+            communities in Namanve, Mukono to ensure a fair, traceable, and
             ethically responsible supply chain for all our products — including
             vanilla, cassia, cloves, and other spices.
           </p>
@@ -925,9 +957,9 @@ function Sustainability() {
           </p>
           <div className="mt-9 grid grid-cols-3 gap-6 max-w-lg">
             {[
-              { value: "3", label: "Origin countries" },
+              { value: "1", label: "Origin · Uganda" },
               { value: "100%", label: "Traceable supply" },
-              { value: "EU+US", label: "Warehousing hubs" },
+              { value: "EAC+", label: "Regional supply" },
             ].map((s) => (
               <div key={s.label}>
                 <p className="font-quicksand font-bold text-3xl md:text-4xl text-accent">
@@ -1087,7 +1119,7 @@ function Footer() {
             <div className="space-y-5 text-sm">
               <div>
                 <p className="font-quicksand font-semibold text-primary-foreground mb-1">
-                  JOJO Vanilla &amp; COFFEE (U) Limited
+                  JOJO Vanilla &amp; Coffee (U) Limited
                 </p>
                 <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-1">Head Office</p>
                 <p className="text-primary-foreground/80 leading-relaxed">
@@ -1265,7 +1297,7 @@ function Footer() {
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/70">
           <p>
-            © {new Date().getFullYear()} JOJO Vanilla &amp; COFFEE (U) Limited, All Rights
+            © {new Date().getFullYear()} JOJO Vanilla &amp; Coffee (U) Limited, All Rights
             Reserved
           </p>
           <div className="flex flex-wrap items-center gap-3">

@@ -144,3 +144,52 @@ Stage Summary:
 - Logo restyled: removed the white background + border, replaced with a gold (accent) background that creates a premium gold frame around the white-centered circular elephant emblem. Logo is now clearly visible against the navy top bar without any explicit outline.
 - Lint clean, dev log clean, browser-verified on both desktop and mobile.
 - Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
+
+---
+Task ID: 6
+Agent: main (Super Z)
+Task: (a) Origin should be just Uganda — single country supplying to other countries of interest (Kenya, Rwanda, Burundi, Congo); (b) Give the header a uniform color (no white); (c) Remove the gold border on the logo; (d) Replace "COFFEE" with "Coffee" (proper case) in the brand name.
+
+Work Log:
+- Reviewed the user's screenshot (jojo header) — confirmed the white main header strip + gold-bordered logo were the issues to fix.
+- Removed the gold border/background from the logo: changed className from "h-24 w-auto rounded-xl shadow-lg bg-accent p-1.5" to "h-24 w-auto rounded-xl shadow-lg" — now the logo sits cleanly on the navy header with just a subtle shadow for depth, no frame or outline.
+- Made the header uniform navy: replaced "bg-card/95 backdrop-blur-md border-b ... border-border" with "bg-primary border-b ... border-primary-foreground/10" so the top bar and main header flow as one continuous navy block (no white strip in between).
+- Updated all navigation link colors from "text-foreground/90 hover:text-primary" to "text-primary-foreground/90 hover:text-accent" so links are visible (white) on the navy header and turn gold on hover.
+- Updated desktop dropdown panel to use bg-popover (white) for readability against the navy parent.
+- Changed the "Request a Quote" CTA from navy to gold ("bg-accent hover:bg-accent/90 text-accent-foreground") so it stands out as the primary action on the navy header.
+- Updated the mobile hamburger icon to white ("text-primary-foreground hover:bg-primary-foreground/10") and the mobile drawer to navy background ("bg-primary border-t border-primary-foreground/10") with white text and gold hover.
+- Replaced the ORIGINS data array: removed Madagascar and Indonesia entries, kept only Uganda (the single sourcing origin). Updated Uganda description to emphasize single-origin sourcing from Namanve, Mukono.
+- Added a new SUPPLY_COUNTRIES array with 4 East African / Great Lakes countries: Kenya, Rwanda, Burundi, DR Congo (each tagged "East African Community" or "Great Lakes region").
+- Completely rewrote the SourcingOrigins section:
+  • Changed eyebrow from "Sourcing Origins" to "Our Origin"
+  • New heading: "One origin. Uganda. The rest of the world is our market."
+  • New body copy focused on direct relationships with farming families in Namanve, Mukono — no mention of "origin countries" plural or "East Africa to South East Asia"
+  • Replaced the 3-column grid (Madagascar/Uganda/Indonesia cards) with a 2-column layout:
+    - Left: large single Uganda origin card (min-h-420px) with "Single Origin" eyebrow, "Uganda" h3, description, and "Grown in Namanve, Mukono" tag
+    - Right: navy panel titled "Countries We Supply · From Uganda to the region" with body copy and a list of the 4 supply countries (Kenya, Rwanda, Burundi, DR Congo) each with a globe icon and EAC/Great Lakes note. Footer line: "Plus global export to 30+ countries worldwide on request."
+- Updated NAV dropdown for "Origins": replaced "Madagascar / Indonesia / Uganda" with "Uganda / Countries We Supply".
+- Updated WHY_PARTNER data: "Reliable Logistics & Scalability" now mentions Mukono dispatch (not EU/USA hubs). "Traceable & Transparent Sourcing" now mentions single origin in Namanve, Mukono (not Madagascar).
+- Updated PRODUCTS data: Vanilla tag changed from "Bourbon & Tahitensis" to "Single Origin · Uganda", description now mentions hand-pollinated and slow-cured at Namanve farm. Ceylon & Cassia description now mentions locally grown Ugandan cassia (not Indonesian/Vietnamese/Sri Lankan).
+- Updated NEWS excerpt for the Vanilla Market Report: now mentions production outlook from Uganda (not Madagascar/Uganda/Indonesia) and East African buyers.
+- Updated hero credentials strip: "3 Origin Countries" → "Single Origin · Uganda"; "EU & USA Warehousing" → "Dispatch from Mukono".
+- Updated CertifiedSupplier body: "With local teams in origin countries" → "With our local team in Namanve, Mukono".
+- Updated Sustainability body: "communities in origin countries" → "communities in Namanve, Mukono".
+- Updated Sustainability stats: "3 / Origin countries" → "1 / Origin · Uganda"; "EU+US / Warehousing hubs" → "EAC+ / Regional supply".
+- Replaced all 8 "JOJO Vanilla & COFFEE (U) Limited" references with "JOJO Vanilla & Coffee (U) Limited" (proper case Coffee) across page.tsx (6 occurrences) and layout.tsx (8 occurrences including title, description, keywords, authors, openGraph, twitter).
+- Updated layout.tsx SEO description: removed "Indonesia, Madagascar and Uganda" — now says "sustainable Ugandan Vanilla Beans, Coffee & Spices from Namanve, Mukono" and "single-origin natural ingredients across East Africa and beyond". Updated keywords to remove Madagascar/Indonesia and add Ugandan Vanilla/Namanve/Mukono.
+- Verified: grep for "madagascar|indonesia|rotterdam|breinigsville|europe & usa|eu & usa|eu+us" returns no matches in src/.
+- Ran `bun run lint` — 0 errors, 0 warnings. Dev log: only successful GET / 200 responses.
+- Verified via Agent Browser (desktop 1440x900):
+  • Header is uniform navy (top bar + main header flow as one block, no white strip)
+  • JOJO logo has NO gold border or outline — sits cleanly on navy with just shadow
+  • Nav menu items are white, turn gold on hover
+  • "Request a Quote" CTA is gold (stands out on navy)
+  • Origins section: heading "One origin. Uganda. The rest of the world is our market." visible, single Uganda origin card with "Single Origin" eyebrow + "Grown in Namanve, Mukono" tag, navy "Countries We Supply" panel listing Kenya/Rwanda/Burundi/DR Congo
+  • Brand name "JOJO Vanilla & Coffee (U) Limited" (proper case Coffee) appears 6 times on the page; 0 uppercase "COFFEE" remaining. Browser tab title is "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & Coffee (U) Limited". Copyright reads "JOJO Vanilla & Coffee (U) Limited".
+
+Stage Summary:
+- Site is now single-origin (Uganda only) supplying to Kenya, Rwanda, Burundi, DR Congo — no Madagascar or Indonesia references anywhere.
+- Header is uniform navy (no white strip), logo has no gold border or outline (just a subtle shadow), nav links are white with gold hover, CTA button is gold.
+- Brand name properly cased as "JOJO Vanilla & Coffee (U) Limited" everywhere (page content, footer, copyright, browser tab title, SEO metadata).
+- Lint clean, dev log clean, browser-verified.
+- Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/

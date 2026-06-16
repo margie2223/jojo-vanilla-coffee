@@ -18,9 +18,9 @@ const overpass = Overpass({
 });
 
 export const metadata: Metadata = {
-  title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & COFFEE (U) Limited",
+  title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & Coffee (U) Limited",
   description:
-    "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO Vanilla & COFFEE (U) Limited ensures a transparent supply chain for professionals.",
+    "B2B Supplier of sustainable Ugandan Vanilla Beans, Coffee & Spices from Namanve, Mukono. JOJO Vanilla & Coffee (U) Limited supplies premium single-origin natural ingredients across East Africa and beyond.",
   keywords: [
     "Vanilla Beans",
     "Coffee",
@@ -28,28 +28,28 @@ export const metadata: Metadata = {
     "Cassia Cinnamon",
     "B2B Supplier",
     "Sustainable Sourcing",
-    "Madagascar Vanilla",
-    "Indonesia Spices",
-    "Uganda Vanilla",
-    "JOJO Vanilla & COFFEE",
+    "Ugandan Vanilla",
+    "Namanve",
+    "Mukono",
+    "JOJO Vanilla & Coffee",
   ],
-  authors: [{ name: "JOJO Vanilla & COFFEE (U) Limited" }],
+  authors: [{ name: "JOJO Vanilla & Coffee (U) Limited" }],
   icons: {
     icon: "/images/logo-jojo.jpg",
   },
   openGraph: {
-    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & COFFEE (U) Limited",
+    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & Coffee (U) Limited",
     description:
-      "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO Vanilla & COFFEE (U) Limited ensures a transparent supply chain for professionals.",
+      "B2B Supplier of sustainable Ugandan Vanilla Beans, Coffee & Spices from Namanve, Mukono. JOJO Vanilla & Coffee (U) Limited supplies premium single-origin natural ingredients across East Africa and beyond.",
     url: "https://jojo-vanilla-coffee.com/",
-    siteName: "JOJO Vanilla & COFFEE (U) Limited",
+    siteName: "JOJO Vanilla & Coffee (U) Limited",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & COFFEE (U) Limited",
+    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & Coffee (U) Limited",
     description:
-      "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda.",
+      "B2B Supplier of sustainable Ugandan Vanilla Beans, Coffee & Spices from Namanve, Mukono. Single-origin sourcing from Uganda to East Africa and beyond.",
   },
 };
 
