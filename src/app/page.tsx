@@ -279,16 +279,12 @@ function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="flex items-center shrink-0 gap-3">
+          <a href="#" className="flex items-center shrink-0">
             <img
               src="/images/logo-jojo.jpg"
               alt="JOJO VANILLA & COFFEE (U) LIMITED"
-              className="h-16 w-auto rounded-xl shadow-sm border border-border/60 bg-white p-1"
+              className="h-20 w-auto rounded-xl shadow-sm border border-border/60 bg-white p-1"
             />
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-quicksand font-bold text-primary text-lg">JOJO</span>
-              <span className="font-quicksand font-semibold text-foreground/80 text-[11px] uppercase tracking-wider">Vanilla &amp; Coffee</span>
-            </span>
           </a>
 
           {/* Desktop nav */}
