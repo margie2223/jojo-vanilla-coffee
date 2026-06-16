@@ -1,0 +1,44 @@
+# Netlify configuration for JOJO Vanilla & Coffee (U) Limited
+# Next.js 16 site — uses the official @netlify/plugin-nextjs runtime
+
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NVM_DIR = "/opt/buildhome/.nvm"
+  NEXT_USE_NETLIFY_EDGE = "true"
+
+# Next.js plugin — handles SSR, image optimization, and static export automatically
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Security & caching headers for the main site
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Long-cache the Next.js static assets (immutable, hashed filenames)
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Long-cache the public/images folder
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# SPA-style fallback so client-side anchor links (e.g. #products, #quote) work
+# even on direct visits or refreshes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Path = ["!/"]}

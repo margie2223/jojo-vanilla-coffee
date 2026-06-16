@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# netlify
+.netlify
+netlify.toml.bak
+
+# user uploads (private — never commit)
+/upload/
+
 
 # typescript
 *.tsbuildinfo
