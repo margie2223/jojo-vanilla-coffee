@@ -26,3 +26,31 @@ Stage Summary:
 - Lint passes with 0 errors and 0 warnings.
 - Browser self-verification PASSED on both desktop (1440x900) and mobile (390x844) viewports.
 - Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/
+
+---
+Task ID: 2
+Agent: main (Super Z)
+Task: Rebrand the cloned site from "De Monchy Natural Products" to "JOJO VANILLA & COFFEE (U) LIMITED" and add the user's uploaded logo.
+
+Work Log:
+- Located the user's uploaded logo at /home/z/my-project/upload/WhatsApp Image 2026-06-16 at 10.09.58 PM.jpeg (540x960 portrait JPEG with decorative gray top bar + blue bottom bar framing a circular green-elephant emblem).
+- Used VLM to inspect the logo and confirm: green elephant in blue circular border, "JOJO VANILLA & COFFEE (U) LIMITED" curved text on the circle, solid white background, decorative bars above/below.
+- Wrote /home/z/my-project/scripts/crop_logo.py to programmatically crop the decorative bars and surrounding whitespace. Used row-wise std-dev analysis to identify the central logo block (rows 256-724 of original), then column-wise content detection to find horizontal extent (cols 54-488), then padded and cleaned the background to pure white. Output: 474x508 cropped logo saved as both /public/images/logo-jojo.jpg (44KB) and /public/images/logo-jojo.png (120KB).
+- Verified the cropped logo via VLM — entire emblem + text visible, no decorative bars, properly centered.
+- Edited src/app/page.tsx header to swap the logo: src=/images/logo-jojo.jpg, alt="JOJO VANILLA & COFFEE (U) LIMITED", increased size from h-12 to h-16, added rounded-xl + shadow + white background + border for clean display on the cream header, plus a text label "JOJO / Vanilla & Coffee" next to the logo (hidden on mobile) for stronger brand presence.
+- Replaced all 11 "De Monchy Natural Products" references with "JOJO VANILLA & COFFEE (U) LIMITED" across page.tsx (hero subtitle, About section heading + body, Why Partner section, News section heading, Sustainability section, footer offices, copyright bar).
+- Replaced remaining standalone "De Monchy" references with "JOJO" or "JOJO VANILLA & COFFEE" (About button, News section heading).
+- Footer office entries: previously "De Monchy Natural Products BV" (Netherlands) and "De Monchy Natural Products Inc." (USA) — both renamed to "JOJO VANILLA & COFFEE (U) LIMITED" with distinguishing subtitle labels "Rotterdam Office" and "US Office" to preserve the two-office structure.
+- Footer legal links: previously "General Terms and Conditions De Monchy Inc" and "General Terms and Conditions De Monchy BV" — replaced with cleaner "Terms & Conditions" and "Privacy Policy" since both refer to the same rebranded company now.
+- Updated all email references from info@monchynp.com to info@jojovanillacoffee.com (4 occurrences across top bar and footer).
+- Updated src/app/layout.tsx metadata: title, description, keywords (added "Coffee"), authors, icons, OpenGraph (URL, site name, descriptions), Twitter card — all now reflect "JOJO VANILLA & COFFEE (U) LIMITED" and the new logo. Also updated SEO description to mention "Vanilla Beans, Coffee & Spices" to match the brand name.
+- Ran `bun run lint` — 0 errors, 0 warnings.
+- Verified via Agent Browser on desktop (1440x900) and mobile (390x844): JOJO elephant logo displays cleanly in header with white background card and text label, hamburger menu works on mobile, footer shows two correctly-labeled office entries (Rotterdam Office / US Office), copyright bar reads "© 2026 JOJO VANILLA & COFFEE (U) LIMITED, All Rights Reserved", browser tab title is "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED".
+- Dev log: only successful GET / 200 responses, no runtime errors.
+
+Stage Summary:
+- The site is now fully rebranded from "De Monchy Natural Products" to "JOJO VANILLA & COFFEE (U) LIMITED" with the user's circular green-elephant logo featured prominently in the header (with a "JOJO / Vanilla & Coffee" text label alongside).
+- All brand-name occurrences updated across page content, footer offices, copyright bar, legal links, contact email, and SEO metadata.
+- No "De Monchy" or "monchynp" references remain in source code.
+- Logo assets: /public/images/logo-jojo.jpg (primary, 44KB) and /public/images/logo-jojo.png (higher quality, 120KB).
+- NOTE for user: Contact phone numbers (+31 Netherlands, +1 USA) and office addresses (Rotterdam, Breinigsville) are still placeholders from the original De Monchy site. User should provide their actual Ugandan phone number and office address to complete the rebrand.

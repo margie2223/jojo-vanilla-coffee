@@ -231,11 +231,11 @@ function TopBar() {
             <span>+31 (10) 3033730</span>
           </a>
           <a
-            href="mailto:info@monchynp.com"
+            href="mailto:info@jojovanillacoffee.com"
             className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors"
           >
             <Mail className="h-3.5 w-3.5" />
-            <span>info@monchynp.com</span>
+            <span>info@jojovanillacoffee.com</span>
           </a>
         </div>
         <div className="flex items-center gap-4">
@@ -279,12 +279,16 @@ function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="flex items-center shrink-0">
+          <a href="#" className="flex items-center shrink-0 gap-3">
             <img
-              src="/images/logo.webp"
-              alt="De Monchy Natural Products"
-              className="h-12 w-auto"
+              src="/images/logo-jojo.jpg"
+              alt="JOJO VANILLA & COFFEE (U) LIMITED"
+              className="h-16 w-auto rounded-xl shadow-sm border border-border/60 bg-white p-1"
             />
+            <span className="hidden sm:flex flex-col leading-tight">
+              <span className="font-quicksand font-bold text-primary text-lg">JOJO</span>
+              <span className="font-quicksand font-semibold text-foreground/80 text-[11px] uppercase tracking-wider">Vanilla &amp; Coffee</span>
+            </span>
           </a>
 
           {/* Desktop nav */}
@@ -422,7 +426,7 @@ function Hero() {
             className="mt-7 text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            De Monchy Natural Products is your B2B partner for vanilla, cassia,
+            JOJO VANILLA & COFFEE (U) LIMITED is your B2B partner for vanilla, cassia,
             cinnamon and a full range of sustainably sourced spices — sourced
             directly from Madagascar, Indonesia and Uganda.
           </p>
@@ -480,14 +484,14 @@ function CertifiedSupplier() {
           <div>
             <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
               <span className="h-px w-10 bg-primary" />
-              About De Monchy
+              About JOJO
             </p>
             <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
               Your Certified Supplier of Natural Ingredients
             </h2>
             <div className="mt-6 space-y-5 text-muted-foreground text-base md:text-lg leading-relaxed">
               <p>
-                At De Monchy Natural Products, we specialize in the direct
+                At JOJO VANILLA & COFFEE (U) LIMITED, we specialize in the direct
                 sourcing and global distribution of high-quality natural
                 ingredients. With local teams in origin countries, we manage
                 each step of the supply chain to guarantee product integrity,
@@ -627,7 +631,7 @@ function WhyPartner() {
           </h2>
           <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">
             Three reasons procurement teams, R&amp;D departments, and sourcing
-            professionals rely on De Monchy Natural Products for vanilla and
+            professionals rely on JOJO VANILLA & COFFEE (U) LIMITED for vanilla and
             spices at scale.
           </p>
         </div>
@@ -767,7 +771,7 @@ function News() {
               News &amp; Insights
             </p>
             <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
-              Latest from De Monchy
+              Latest from JOJO
             </h2>
           </div>
           <Button
@@ -849,7 +853,7 @@ function Sustainability() {
             Embedded in every part of our global sourcing strategy
           </h2>
           <p className="mt-6 text-primary-foreground/90 text-base md:text-lg leading-relaxed">
-            At De Monchy Natural Products, sustainability is embedded in every
+            At JOJO VANILLA & COFFEE (U) LIMITED, sustainability is embedded in every
             part of our global sourcing strategy. We work directly with farming
             communities in origin countries to ensure a fair, traceable, and
             ethically responsible supply chain for all our products — including
@@ -1024,8 +1028,9 @@ function Footer() {
             <div className="space-y-5 text-sm">
               <div>
                 <p className="font-quicksand font-semibold text-primary-foreground mb-1">
-                  De Monchy Natural Products BV
+                  JOJO VANILLA &amp; COFFEE (U) LIMITED
                 </p>
+                <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-1">Rotterdam Office</p>
                 <p className="text-primary-foreground/80 leading-relaxed">
                   Coventrystraat 7
                   <br />
@@ -1036,8 +1041,9 @@ function Footer() {
               </div>
               <div>
                 <p className="font-quicksand font-semibold text-primary-foreground mb-1">
-                  De Monchy Natural Products Inc.
+                  JOJO VANILLA &amp; COFFEE (U) LIMITED
                 </p>
+                <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-1">US Office</p>
                 <p className="text-primary-foreground/80 leading-relaxed">
                   1063 Mosser Road, C-205
                   <br />
@@ -1067,11 +1073,11 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:info@monchynp.com"
+                    href="mailto:info@jojovanillacoffee.com"
                     className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
                   >
                     <Mail className="h-4 w-4 text-accent" />
-                    info@monchynp.com
+                    info@jojovanillacoffee.com
                   </a>
                 </li>
                 <li>
@@ -1181,16 +1187,16 @@ function Footer() {
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/70">
           <p>
-            © {new Date().getFullYear()} De Monchy Natural Products, All Rights
+            © {new Date().getFullYear()} JOJO VANILLA &amp; COFFEE (U) LIMITED, All Rights
             Reserved
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a href="#" className="hover:text-accent transition-colors">
-              General Terms and Conditions De Monchy Inc
+              Terms &amp; Conditions
             </a>
             <span className="text-primary-foreground/30">|</span>
             <a href="#" className="hover:text-accent transition-colors">
-              General Terms and Conditions De Monchy BV
+              Privacy Policy
             </a>
           </div>
         </div>

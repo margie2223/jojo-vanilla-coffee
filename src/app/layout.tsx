@@ -18,11 +18,12 @@ const overpass = Overpass({
 });
 
 export const metadata: Metadata = {
-  title: "B2B Supplier of Natural Vanilla & Spices | De Monchy Natural Products",
+  title: "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED",
   description:
-    "B2B Supplier of sustainable ingredients like Vanilla Beans & Spices from Indonesia, Madagascar and Uganda. De Monchy Natural Products ensures a transparent supply chain for professionals.",
+    "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO VANILLA & COFFEE (U) LIMITED ensures a transparent supply chain for professionals.",
   keywords: [
     "Vanilla Beans",
+    "Coffee",
     "Natural Spices",
     "Cassia Cinnamon",
     "B2B Supplier",
@@ -30,25 +31,25 @@ export const metadata: Metadata = {
     "Madagascar Vanilla",
     "Indonesia Spices",
     "Uganda Vanilla",
-    "De Monchy",
+    "JOJO VANILLA & COFFEE",
   ],
-  authors: [{ name: "De Monchy Natural Products" }],
+  authors: [{ name: "JOJO VANILLA & COFFEE (U) LIMITED" }],
   icons: {
-    icon: "/images/logo.webp",
+    icon: "/images/logo-jojo.jpg",
   },
   openGraph: {
-    title: "B2B Supplier of Natural Vanilla & Spices | De Monchy Natural Products",
+    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED",
     description:
-      "B2B Supplier of sustainable ingredients like Vanilla Beans & Spices from Indonesia, Madagascar and Uganda. De Monchy Natural Products ensures a transparent supply chain for professionals.",
-    url: "https://monchynaturalproducts.com/",
-    siteName: "De Monchy Natural Products",
+      "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO VANILLA & COFFEE (U) LIMITED ensures a transparent supply chain for professionals.",
+    url: "https://jojo-vanilla-coffee.com/",
+    siteName: "JOJO VANILLA & COFFEE (U) LIMITED",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B Supplier of Natural Vanilla & Spices | De Monchy Natural Products",
+    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED",
     description:
-      "B2B Supplier of sustainable ingredients like Vanilla Beans & Spices from Indonesia, Madagascar and Uganda.",
+      "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda.",
   },
 };
 
