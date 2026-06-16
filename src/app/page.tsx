@@ -224,30 +224,28 @@ function TopBar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 py-2">
         <div className="flex flex-wrap items-center gap-4">
           <a
-            href="tel:+31103033730"
+            href="tel:+256704438107"
             className="flex items-center gap-1.5 hover:text-accent transition-colors"
           >
             <Phone className="h-3.5 w-3.5" />
-            <span>+31 (10) 3033730</span>
+            <span>+256 704 438 107</span>
           </a>
           <a
-            href="mailto:info@jojovanillacoffee.com"
+            href="mailto:rojakajojo@gmail.com"
             className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors"
           >
             <Mail className="h-3.5 w-3.5" />
-            <span>info@jojovanillacoffee.com</span>
+            <span>rojakajojo@gmail.com</span>
           </a>
         </div>
         <div className="flex items-center gap-4">
           <span className="hidden md:inline text-primary-foreground/80">
-            Rotterdam · Breinigsville · Worldwide
+            Namanve · Mukono · Uganda
           </span>
           <div className="flex items-center gap-2">
             <span className="text-primary-foreground/80">EN</span>
             <span className="text-primary-foreground/40">/</span>
-            <span className="text-primary-foreground/60">日本語</span>
-            <span className="text-primary-foreground/40">/</span>
-            <span className="text-primary-foreground/60">한국어</span>
+            <span className="text-primary-foreground/60">Luganda</span>
           </div>
           <a
             href="#contact"
@@ -282,7 +280,7 @@ function Header() {
           <a href="#" className="flex items-center shrink-0">
             <img
               src="/images/logo-jojo.jpg"
-              alt="JOJO VANILLA & COFFEE (U) LIMITED"
+              alt="JOJO Vanilla & COFFEE (U) Limited"
               className="h-20 w-auto rounded-xl shadow-sm border border-border/60 bg-white p-1"
             />
           </a>
@@ -422,7 +420,7 @@ function Hero() {
             className="mt-7 text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            JOJO VANILLA & COFFEE (U) LIMITED is your B2B partner for vanilla, cassia,
+            JOJO Vanilla & COFFEE (U) Limited is your B2B partner for vanilla, cassia,
             cinnamon and a full range of sustainably sourced spices — sourced
             directly from Madagascar, Indonesia and Uganda.
           </p>
@@ -487,7 +485,7 @@ function CertifiedSupplier() {
             </h2>
             <div className="mt-6 space-y-5 text-muted-foreground text-base md:text-lg leading-relaxed">
               <p>
-                At JOJO VANILLA & COFFEE (U) LIMITED, we specialize in the direct
+                At JOJO Vanilla & COFFEE (U) Limited, we specialize in the direct
                 sourcing and global distribution of high-quality natural
                 ingredients. With local teams in origin countries, we manage
                 each step of the supply chain to guarantee product integrity,
@@ -627,7 +625,7 @@ function WhyPartner() {
           </h2>
           <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">
             Three reasons procurement teams, R&amp;D departments, and sourcing
-            professionals rely on JOJO VANILLA & COFFEE (U) LIMITED for vanilla and
+            professionals rely on JOJO Vanilla & COFFEE (U) Limited for vanilla and
             spices at scale.
           </p>
         </div>
@@ -849,7 +847,7 @@ function Sustainability() {
             Embedded in every part of our global sourcing strategy
           </h2>
           <p className="mt-6 text-primary-foreground/90 text-base md:text-lg leading-relaxed">
-            At JOJO VANILLA & COFFEE (U) LIMITED, sustainability is embedded in every
+            At JOJO Vanilla & COFFEE (U) Limited, sustainability is embedded in every
             part of our global sourcing strategy. We work directly with farming
             communities in origin countries to ensure a fair, traceable, and
             ethically responsible supply chain for all our products — including
@@ -1024,67 +1022,45 @@ function Footer() {
             <div className="space-y-5 text-sm">
               <div>
                 <p className="font-quicksand font-semibold text-primary-foreground mb-1">
-                  JOJO VANILLA &amp; COFFEE (U) LIMITED
+                  JOJO Vanilla &amp; COFFEE (U) Limited
                 </p>
-                <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-1">Rotterdam Office</p>
+                <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-1">Head Office</p>
                 <p className="text-primary-foreground/80 leading-relaxed">
-                  Coventrystraat 7
+                  Namanve, Kiwanga
                   <br />
-                  3047 AD Rotterdam
+                  Matovu Road
                   <br />
-                  The Netherlands
-                </p>
-              </div>
-              <div>
-                <p className="font-quicksand font-semibold text-primary-foreground mb-1">
-                  JOJO VANILLA &amp; COFFEE (U) LIMITED
-                </p>
-                <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold mb-1">US Office</p>
-                <p className="text-primary-foreground/80 leading-relaxed">
-                  1063 Mosser Road, C-205
-                  <br />
-                  Breinigsville, PA 18031
-                  <br />
-                  United States of America
+                  Mukono, Uganda
                 </p>
               </div>
               <ul className="space-y-2 pt-1">
                 <li>
                   <a
-                    href="tel:+31103033730"
+                    href="tel:+256704438107"
                     className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
                   >
                     <Phone className="h-4 w-4 text-accent" />
-                    +31 (10) 3033730
+                    +256 704 438 107
                   </a>
                 </li>
                 <li>
                   <a
-                    href="tel:+12158061124"
-                    className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
-                  >
-                    <Phone className="h-4 w-4 text-accent" />
-                    +1 215 806 1124
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:info@jojovanillacoffee.com"
+                    href="mailto:rojakajojo@gmail.com"
                     className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
                   >
                     <Mail className="h-4 w-4 text-accent" />
-                    info@jojovanillacoffee.com
+                    rojakajojo@gmail.com
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/company/27063273"
+                    href="https://www.google.com/maps/search/?api=1&query=Namanve+Kiwanga+Matovu+Road+Mukono+Uganda"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary-foreground/85 hover:text-accent transition-colors"
                   >
-                    <Linkedin className="h-4 w-4 text-accent" />
-                    LinkedIn Page
+                    <MapPin className="h-4 w-4 text-accent" />
+                    View on Google Maps
                   </a>
                 </li>
               </ul>
@@ -1154,9 +1130,9 @@ function Footer() {
               Get in touch
             </h2>
             <p className="text-sm text-primary-foreground/80 leading-relaxed mb-5">
-              Looking for a reliable B2B supplier of vanilla, cassia or spices?
-              Our team is ready to help you find the right product at the right
-              price.
+              Looking for a reliable B2B supplier of vanilla, coffee or spices?
+              Our team in Mukono is ready to help you find the right product at
+              the right price.
             </p>
             <Button
               asChild
@@ -1168,7 +1144,7 @@ function Footer() {
             <div className="mt-8 space-y-2 text-sm text-primary-foreground/80">
               <p className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                Rotterdam · Breinigsville
+                Namanve · Mukono · Uganda
               </p>
               <p className="flex items-start gap-2">
                 <Globe2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
@@ -1183,7 +1159,7 @@ function Footer() {
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/70">
           <p>
-            © {new Date().getFullYear()} JOJO VANILLA &amp; COFFEE (U) LIMITED, All Rights
+            © {new Date().getFullYear()} JOJO Vanilla &amp; COFFEE (U) Limited, All Rights
             Reserved
           </p>
           <div className="flex flex-wrap items-center gap-3">

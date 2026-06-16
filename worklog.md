@@ -54,3 +54,31 @@ Stage Summary:
 - No "De Monchy" or "monchynp" references remain in source code.
 - Logo assets: /public/images/logo-jojo.jpg (primary, 44KB) and /public/images/logo-jojo.png (higher quality, 120KB).
 - NOTE for user: Contact phone numbers (+31 Netherlands, +1 USA) and office addresses (Rotterdam, Breinigsville) are still placeholders from the original De Monchy site. User should provide their actual Ugandan phone number and office address to complete the rebrand.
+
+---
+Task ID: 3
+Agent: main (Super Z)
+Task: (a) Rebrand to "JOJO Vanilla & COFFEE (U) Limited" (mixed case); (b) Apply the color palette from https://magical-dodol-dd1129.netlify.app/; (c) Use that reference site's contact info.
+
+Work Log:
+- Fetched the reference site (Vanillarogers — Blog & Gallery) via z-ai page_reader and extracted its color palette and contact information.
+- Palette extracted from CSS: dark navy #0F172A (primary), gold/amber #D4A843 (accent), pale cream #FFF9E8 / #FFF3D1 (secondary/muted), white #FFFFFF (background), light gray #E5E7EB (borders).
+- Contact info extracted from reference site: phone +256 704 438 107, email rojakajojo@gmail.com, address Namanve, Kiwanga Matovu Road, Mukono, Uganda.
+- Rewrote globals.css :root tokens — replaced the old forest-green + warm-cream earth-tone palette with the new navy + gold + cream palette. All oklch color tokens updated (background, foreground, card, popover, primary, secondary, muted, accent, border, ring, charts, sidebar). Also updated .dark theme and the custom scrollbar (now gold thumb on cream track, 6px wide to match reference).
+- Updated top bar (TopBar component): replaced +31 Netherlands phone with +256 704 438 107, replaced info@jojovanillacoffee.com with rojakajojo@gmail.com, replaced "Rotterdam · Breinigsville · Worldwide" with "Namanve · Mukono · Uganda", removed Japanese/Korean language options and replaced with Luganda (local Ugandan language) alongside EN.
+- Collapsed footer contact column from two office entries (Rotterdam + Breinigsville) into a single Head Office entry at Namanve/Kiwanga/Matovu Road/Mukono/Uganda. Replaced both phone numbers with +256 704 438 107, replaced email with rojakajojo@gmail.com, removed LinkedIn link and added "View on Google Maps" link instead.
+- Updated footer "Get in touch" column: replaced "Rotterdam · Breinigsville" with "Namanve · Mukono · Uganda", updated copy to mention "vanilla, coffee or spices" and "team in Mukono".
+- Updated copyright bar from "© 2026 JOJO VANILLA & COFFEE (U) LIMITED, All Rights Reserved" to "© 2026 JOJO Vanilla & COFFEE (U) Limited, All Rights Reserved" (proper mixed case).
+- Updated layout.tsx metadata: title, descriptions, keywords, authors, openGraph (site name + URL jojo-vanilla-coffee.com), Twitter card — all now use "JOJO Vanilla & COFFEE (U) Limited" mixed case.
+- Updated all 5 remaining in-body references in page.tsx (hero subtitle, About section body, Why Partner section body, Sustainability section body, logo alt attribute) from "JOJO VANILLA & COFFEE (U) LIMITED" to "JOJO Vanilla & COFFEE (U) Limited".
+- Verified no stale references remain: grep for Rotterdam|Breinigsville|monchynp|jojovanillacoffee|+31|+1 215|Coventrystraat|Mosser returns no hits in src/.
+- Ran `bun run lint` — 0 errors, 0 warnings. Dev log: only successful GET / 200 responses, no runtime errors.
+- Verified via Agent Browser (desktop 1440x900): top bar is navy with gold hover accents, JOJO elephant logo visible top-left on white card, hero text white on navy with gold CTAs, footer is navy with gold section headings, address shows Namanve/Kiwanga/Matovu Road/Mukono/Uganda, phone +256 704 438 107, email rojakajojo@gmail.com, Google Maps link present, copyright reads "© 2026 JOJO Vanilla & COFFEE (U) Limited, All Rights Reserved".
+
+Stage Summary:
+- Site is fully rebranded to "JOJO Vanilla & COFFEE (U) Limited" (proper mixed case) across page content, footer, copyright, and SEO metadata.
+- Color palette replaced with the Vanillarogers reference palette: dark navy #0F172A (primary — used for top bar, hero overlay, "Our Products" section, footer), gold #D4A843 (accent — CTAs, links, headings on dark sections, scrollbar thumb), pale cream #FFF9E8/#FFF3D1 (secondary/muted — light section backgrounds), white (main background). Visually premium and on-brand for a Ugandan vanilla company.
+- Contact info fully swapped to the reference site's: phone +256 704 438 107, email rojakajojo@gmail.com, address Namanve, Kiwanga Matovu Road, Mukono, Uganda — single Head Office (collapsed the previous two-office EU/US structure).
+- Top bar language switcher localized to EN/Luganda (replaced Japanese/Korean which were irrelevant to a Ugandan business).
+- Lint clean, dev log clean, browser-verified on desktop.
+- Preview URL: https://preview-chat-2f55dc9d-11cd-4ea1-90a3-09c8e123b026.space-z.ai/

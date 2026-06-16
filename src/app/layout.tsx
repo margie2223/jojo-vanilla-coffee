@@ -18,9 +18,9 @@ const overpass = Overpass({
 });
 
 export const metadata: Metadata = {
-  title: "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED",
+  title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & COFFEE (U) Limited",
   description:
-    "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO VANILLA & COFFEE (U) LIMITED ensures a transparent supply chain for professionals.",
+    "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO Vanilla & COFFEE (U) Limited ensures a transparent supply chain for professionals.",
   keywords: [
     "Vanilla Beans",
     "Coffee",
@@ -31,23 +31,23 @@ export const metadata: Metadata = {
     "Madagascar Vanilla",
     "Indonesia Spices",
     "Uganda Vanilla",
-    "JOJO VANILLA & COFFEE",
+    "JOJO Vanilla & COFFEE",
   ],
-  authors: [{ name: "JOJO VANILLA & COFFEE (U) LIMITED" }],
+  authors: [{ name: "JOJO Vanilla & COFFEE (U) Limited" }],
   icons: {
     icon: "/images/logo-jojo.jpg",
   },
   openGraph: {
-    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED",
+    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & COFFEE (U) Limited",
     description:
-      "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO VANILLA & COFFEE (U) LIMITED ensures a transparent supply chain for professionals.",
+      "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda. JOJO Vanilla & COFFEE (U) Limited ensures a transparent supply chain for professionals.",
     url: "https://jojo-vanilla-coffee.com/",
-    siteName: "JOJO VANILLA & COFFEE (U) LIMITED",
+    siteName: "JOJO Vanilla & COFFEE (U) Limited",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO VANILLA & COFFEE (U) LIMITED",
+    title: "B2B Supplier of Natural Vanilla & Coffee | JOJO Vanilla & COFFEE (U) Limited",
     description:
       "B2B Supplier of sustainable ingredients like Vanilla Beans, Coffee & Spices from Indonesia, Madagascar and Uganda.",
   },
