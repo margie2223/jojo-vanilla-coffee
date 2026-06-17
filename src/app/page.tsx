@@ -513,7 +513,7 @@ function MarqueeTicker() {
     "Slow-Cured in Namanve",
     "Single Origin · Mukono",
     "Grade A1 Premium Beans",
-    "17%+ Vanillin Content",
+    "1.7%+ Vanillin Content",
     "Direct from Farmer to Buyer",
     "Serving Kenya · Rwanda · Burundi · DR Congo",
     "Sustainable Sourcing",
@@ -1110,7 +1110,7 @@ function ProductSpotlight() {
 
             <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
               <div className="bg-secondary rounded-xl p-4 text-center border border-border">
-                <p className="font-quicksand font-bold text-2xl text-primary">17%</p>
+                <p className="font-quicksand font-bold text-2xl text-primary">1.7%</p>
                 <p className="text-xs text-muted-foreground mt-1">Min. vanillin</p>
               </div>
               <div className="bg-secondary rounded-xl p-4 text-center border border-border">
