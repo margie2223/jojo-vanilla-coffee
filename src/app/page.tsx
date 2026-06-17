@@ -433,7 +433,7 @@ function Hero() {
         <img
           src="/images/hero-farm.jpg"
           alt="Vanilla vine climbing a support tree on a Ugandan vanilla farm in Namanve"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover animate-ken-burns"
         />
         <div className="absolute inset-0 hero-overlay" />
       </div>
@@ -504,6 +504,41 @@ function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function MarqueeTicker() {
+  const items = [
+    "🌿 Hand-Pollinated Ugandan Vanilla",
+    "Slow-Cured in Namanve",
+    "Single Origin · Mukono",
+    "Grade A1 Premium Beans",
+    "17%+ Vanillin Content",
+    "Direct from Farmer to Buyer",
+    "Serving Kenya · Rwanda · Burundi · DR Congo",
+    "Sustainable Sourcing",
+    "B2B Bulk Supply",
+    "🌍 East Africa to the World",
+  ];
+  // Duplicate the list so the marquee can loop seamlessly (translateX -50%)
+  const loop = [...items, ...items];
+
+  return (
+    <div className="bg-primary text-primary-foreground border-y border-primary-foreground/10 overflow-hidden">
+      <div className="relative flex">
+        <div className="flex animate-marquee whitespace-nowrap py-3.5">
+          {loop.map((item, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-3 px-6 font-quicksand font-semibold text-sm md:text-base"
+            >
+              <span className="text-accent">✦</span>
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -643,7 +678,7 @@ function DynamicBanner() {
 
 function SourcingOrigins() {
   return (
-    <section id="origins" className="py-14 md:py-20 bg-secondary/60">
+    <section id="origins" className="py-14 md:py-20 bg-secondary/60 reveal-on-scroll">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
@@ -744,7 +779,7 @@ function SourcingOrigins() {
 
 function WhyPartner() {
   return (
-    <section id="why" className="py-14 md:py-20 bg-background">
+    <section id="why" className="py-14 md:py-20 bg-background reveal-on-scroll">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10 text-center mx-auto">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
@@ -888,7 +923,7 @@ function OurProducts() {
 
 function ProductSpotlight() {
   return (
-    <section className="py-14 md:py-20 bg-background">
+    <section className="py-14 md:py-20 bg-background reveal-on-scroll">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image side — the user's actual vanilla bean bundles photo */}
@@ -897,7 +932,7 @@ function ProductSpotlight() {
               <img
                 src="/images/vanilla-beans-bundles.jpg"
                 alt="Premium Ugandan vanilla bean bundles, hand-cured and tied at our Namanve farm"
-                className="w-full h-[520px] object-cover"
+                className="w-full h-[520px] object-cover animate-ken-burns"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
             </div>
@@ -989,7 +1024,7 @@ function ProductSpotlight() {
 
 function News() {
   return (
-    <section id="news" className="py-14 md:py-20 bg-background">
+    <section id="news" className="py-14 md:py-20 bg-background reveal-on-scroll">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
@@ -1125,7 +1160,7 @@ function Sustainability() {
 
 function WhoWeServe() {
   return (
-    <section className="py-14 md:py-20 bg-background">
+    <section className="py-14 md:py-20 bg-background reveal-on-scroll">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10 text-center mx-auto">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
@@ -1177,7 +1212,7 @@ function WhoWeServe() {
 
 function Leadership() {
   return (
-    <section className="py-14 md:py-20 bg-secondary/60">
+    <section className="py-14 md:py-20 bg-secondary/60 reveal-on-scroll">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Photo side — main portrait + inset conference photo */}
@@ -1187,7 +1222,7 @@ function Leadership() {
               <img
                 src="/images/ceo-portrait-outdoor.jpg"
                 alt="Rogers Kajojo, CEO & Founder of JOJO Vanilla & Coffee (U) Limited, at his farm in Namanve, Mukono"
-                className="w-full h-[560px] object-cover object-top"
+                className="w-full h-[560px] object-cover object-top animate-ken-burns"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent" />
             </div>
@@ -1621,12 +1656,31 @@ function Footer() {
 /* --------------------------------------------------------------- */
 
 export default function Home() {
+  // Reveal sections on scroll — adds .is-visible to .reveal-on-scroll elements
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+    const els = document.querySelectorAll(".reveal-on-scroll");
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <TopBar />
       <Header />
       <main className="flex-1">
         <Hero />
+        <MarqueeTicker />
         <CertifiedSupplier />
         <DynamicBanner />
         <SourcingOrigins />
