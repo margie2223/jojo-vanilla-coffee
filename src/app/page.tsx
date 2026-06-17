@@ -676,6 +676,141 @@ function DynamicBanner() {
   );
 }
 
+function ProcessTimeline() {
+  const steps = [
+    {
+      n: "01",
+      icon: Sprout,
+      title: "Hand-Pollination",
+      time: "Day 0",
+      desc: "Each vanilla orchid flower is hand-pollinated by our farmers within hours of blooming — a delicate skill passed down through generations in Namanve.",
+    },
+    {
+      n: "02",
+      icon: Leaf,
+      title: "On the Vine",
+      time: "9 months",
+      desc: "The green pods develop slowly on the vine, absorbing nutrients from Mukono's volcanic soil and equatorial sun. No shortcuts, no forcing.",
+    },
+    {
+      n: "03",
+      icon: Package,
+      title: "Harvest",
+      time: "Month 9–10",
+      desc: "Pods are picked individually at peak maturity — when the tip turns yellow and the vanillin precursors are at their highest.",
+    },
+    {
+      n: "04",
+      icon: FlaskConical,
+      title: "Sweating",
+      time: "Week 1–2",
+      desc: "Green pods are wrapped in wool blankets and kept warm to trigger the enzymatic reaction that begins flavor development.",
+    },
+    {
+      n: "05",
+      icon: Globe2,
+      title: "Sun-Drying",
+      time: "Week 2–4",
+      desc: "Pods are laid on raised racks under the equatorial sun, turned by hand daily until they turn dark brown and supple.",
+    },
+    {
+      n: "06",
+      icon: ShieldCheck,
+      title: "Conditioning",
+      time: "Months 2–6",
+      desc: "Dried pods rest in closed wooden boxes for months — slowly developing the rich vanillin profile that defines premium Ugandan bourbon vanilla.",
+    },
+    {
+      n: "07",
+      icon: Ship,
+      title: "Grading & Export",
+      time: "Month 6+",
+      desc: "Each pod is graded by length, moisture and aroma. Only Grade A1 beans make the cut — then shipped from Mukono to buyers across East Africa and beyond.",
+    },
+  ];
+
+  return (
+    <section className="py-14 md:py-20 bg-background reveal-on-scroll">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mb-10">
+          <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
+            <span className="h-px w-10 bg-primary" />
+            The Craft
+          </p>
+          <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
+            From flower to <span className="text-accent">fragrant black gold</span>
+          </h2>
+          <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">
+            Every vanilla bean takes over six months to cure — and almost a year
+            to grow. Here&apos;s the journey each pod makes, from our farm in
+            Namanve to your warehouse.
+          </p>
+        </div>
+
+        {/* Desktop: horizontal timeline with connecting line */}
+        <div className="hidden lg:block relative">
+          {/* Horizontal connecting line */}
+          <div className="absolute top-10 left-0 right-0 h-0.5 bg-border" />
+          <div className="relative grid grid-cols-7 gap-4">
+            {steps.map((s) => (
+              <div key={s.n} className="flex flex-col items-center text-center">
+                {/* Numbered circle with icon */}
+                <div className="relative w-20 h-20 rounded-full bg-card border-2 border-accent flex items-center justify-center shadow-md z-10">
+                  <s.icon className="h-8 w-8 text-primary" />
+                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-quicksand font-bold w-6 h-6 rounded-full flex items-center justify-center">
+                    {s.n}
+                  </span>
+                </div>
+                {/* Time badge */}
+                <span className="mt-3 text-[11px] uppercase tracking-wider text-accent font-quicksand font-semibold">
+                  {s.time}
+                </span>
+                {/* Title */}
+                <h3 className="mt-1 font-quicksand font-bold text-base text-foreground">
+                  {s.title}
+                </h3>
+                {/* Description */}
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile + tablet: vertical timeline */}
+        <div className="lg:hidden relative pl-8">
+          {/* Vertical connecting line */}
+          <div className="absolute left-5 top-2 bottom-2 w-0.5 bg-border" />
+          <div className="space-y-7">
+            {steps.map((s) => (
+              <div key={s.n} className="relative">
+                {/* Numbered circle */}
+                <div className="absolute -left-8 top-0 w-10 h-10 rounded-full bg-card border-2 border-accent flex items-center justify-center shadow-md z-10">
+                  <s.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div className="ml-4">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="font-quicksand font-bold text-base text-foreground">
+                      {s.title}
+                    </h3>
+                    <span className="text-[10px] uppercase tracking-wider text-accent font-quicksand font-semibold bg-accent/10 px-2 py-0.5 rounded-full">
+                      {s.time}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SourcingOrigins() {
   return (
     <section id="origins" className="py-14 md:py-20 bg-secondary/60 reveal-on-scroll">
@@ -1683,6 +1818,7 @@ export default function Home() {
         <MarqueeTicker />
         <CertifiedSupplier />
         <DynamicBanner />
+        <ProcessTimeline />
         <SourcingOrigins />
         <WhyPartner />
         <OurProducts />
