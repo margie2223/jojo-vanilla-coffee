@@ -22,6 +22,9 @@ import {
   Layers,
   Truck,
   CheckCircle2,
+  Quote,
+  Mic,
+  Award,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -1172,6 +1175,104 @@ function WhoWeServe() {
   );
 }
 
+function Leadership() {
+  return (
+    <section className="py-20 md:py-28 bg-secondary/60">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Photo side */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="/images/ceo-rwanda-conference.jpg"
+                alt="CEO Rogers Kajojo with fellow vanilla industry stakeholders at the Rwanda Vanilla Conference"
+                className="w-full h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
+            </div>
+            {/* Conference badge */}
+            <div className="absolute -top-5 -right-5 bg-accent text-accent-foreground rounded-2xl px-5 py-4 shadow-xl rotate-3 max-w-[200px]">
+              <Mic className="h-6 w-6 mb-1" />
+              <p className="font-quicksand font-bold text-sm leading-tight">
+                Keynote Stakeholder
+              </p>
+              <p className="text-xs mt-0.5">Rwanda Vanilla Conference</p>
+            </div>
+            {/* CEO name plate */}
+            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-xl px-6 py-4 shadow-xl">
+              <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold">CEO & Founder</p>
+              <p className="font-quicksand font-bold text-xl">Rogers Kajojo</p>
+              <p className="text-xs text-primary-foreground/70 mt-0.5">JOJO Vanilla &amp; Coffee (U) Ltd</p>
+            </div>
+          </div>
+
+          {/* Text side */}
+          <div className="order-1 lg:order-2">
+            <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
+              <span className="h-px w-10 bg-primary" />
+              Leadership &amp; Industry Presence
+            </p>
+            <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
+              From Namanve to the <span className="text-accent">regional stage</span>
+            </h2>
+
+            <div className="mt-6 space-y-5 text-muted-foreground text-base md:text-lg leading-relaxed">
+              <p>
+                Our CEO &amp; Founder, <strong className="text-foreground font-quicksand">Rogers Kajojo</strong>,
+                was recently invited to the <strong className="text-foreground font-quicksand">Rwanda Vanilla
+                Conference</strong> as a keynote stakeholder — showcasing JOJO Vanilla &amp; Coffee&apos;s
+                produce to buyers, regulators and fellow producers from across East Africa.
+              </p>
+              <p>
+                His session focused on three priorities: raising the bar on
+                Ugandan vanilla quality, building transparent supply chains
+                from smallholder farmers to export markets, and opening new
+                trade corridors across the East African Community.
+              </p>
+              <p>
+                It was a moment of pride for our team in Namanve — proof that
+                the work we do on a few acres in Mukono is being recognised on
+                the regional vanilla stage.
+              </p>
+            </div>
+
+            {/* Pull quote */}
+            <blockquote className="mt-8 relative bg-card border-l-4 border-accent rounded-r-xl p-6 shadow-sm">
+              <Quote className="absolute top-4 right-4 h-8 w-8 text-accent/30" />
+              <p className="font-quicksand font-semibold text-lg text-foreground leading-snug italic pr-10">
+                &ldquo;Ugandan vanilla is no longer a hidden treasure. We are
+                here to set the standard — hand-pollinated, slow-cured, and
+                traceable from every farmer in Namanve to every buyer
+                worldwide.&rdquo;
+              </p>
+              <footer className="mt-4 text-sm text-muted-foreground">
+                — Rogers Kajojo, CEO · JOJO Vanilla &amp; Coffee (U) Limited
+              </footer>
+            </blockquote>
+
+            {/* Achievement chips */}
+            <div className="mt-7 flex flex-wrap gap-2">
+              {[
+                { icon: Mic, label: "Keynote Speaker · Rwanda" },
+                { icon: Award, label: "Regional Stakeholder" },
+                { icon: Globe2, label: "EAC Trade Advocate" },
+              ].map((chip) => (
+                <span
+                  key={chip.label}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-card border border-border px-4 py-1.5 text-sm font-medium text-foreground"
+                >
+                  <chip.icon className="h-3.5 w-3.5 text-accent" />
+                  {chip.label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function QuoteCTA() {
   return (
     <section
@@ -1516,6 +1617,7 @@ export default function Home() {
         <News />
         <Sustainability />
         <WhoWeServe />
+        <Leadership />
         <QuoteCTA />
       </main>
       <Footer />
