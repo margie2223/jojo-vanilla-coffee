@@ -438,7 +438,7 @@ function Hero() {
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-36 lg:py-44">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-28">
         <div className="max-w-3xl text-primary-foreground">
           <p className="inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-5 animate-fade-up">
             <span className="h-px w-10 bg-accent" />
@@ -509,9 +509,9 @@ function Hero() {
 
 function CertifiedSupplier() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-background">
+    <section id="about" className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           <div>
             <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
               <span className="h-px w-10 bg-primary" />
@@ -606,7 +606,7 @@ function DynamicBanner() {
         <div className="absolute inset-0 bg-primary/55" />
       </div>
 
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center text-primary-foreground">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center text-primary-foreground">
         <p className="inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
           <span className="h-px w-10 bg-accent" />
           From Our Curing House
@@ -643,9 +643,9 @@ function DynamicBanner() {
 
 function SourcingOrigins() {
   return (
-    <section id="origins" className="py-20 md:py-28 bg-secondary/60">
+    <section id="origins" className="py-14 md:py-20 bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
             <span className="h-px w-10 bg-primary" />
             Our Origin
@@ -744,9 +744,9 @@ function SourcingOrigins() {
 
 function WhyPartner() {
   return (
-    <section id="why" className="py-20 md:py-28 bg-background">
+    <section id="why" className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14 text-center mx-auto">
+        <div className="max-w-3xl mb-10 text-center mx-auto">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
             <span className="h-px w-10 bg-primary" />
             Why partner with us
@@ -815,7 +815,7 @@ function OurProducts() {
   return (
     <section
       id="products"
-      className="py-20 md:py-28 bg-primary text-primary-foreground relative overflow-hidden"
+      className="py-14 md:py-20 bg-primary text-primary-foreground relative overflow-hidden"
     >
       {/* Decorative leaf pattern */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
@@ -824,7 +824,7 @@ function OurProducts() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10">
           <p className="inline-flex items-center gap-2 text-accent font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
             <span className="h-px w-10 bg-accent" />
             Our Products
@@ -869,7 +869,7 @@ function OurProducts() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <Button
             asChild
             size="lg"
@@ -888,9 +888,9 @@ function OurProducts() {
 
 function ProductSpotlight() {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image side — the user's actual vanilla bean bundles photo */}
           <div className="relative order-2 lg:order-1">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -989,7 +989,7 @@ function ProductSpotlight() {
 
 function News() {
   return (
-    <section id="news" className="py-20 md:py-28 bg-background">
+    <section id="news" className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
@@ -1059,7 +1059,7 @@ function Sustainability() {
   return (
     <section
       id="sustainability"
-      className="relative py-20 md:py-28 overflow-hidden"
+      className="relative py-14 md:py-20 overflow-hidden"
     >
       <div className="absolute inset-0">
         <img
@@ -1125,9 +1125,9 @@ function Sustainability() {
 
 function WhoWeServe() {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-14 md:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14 text-center mx-auto">
+        <div className="max-w-3xl mb-10 text-center mx-auto">
           <p className="inline-flex items-center gap-2 text-primary font-quicksand font-semibold uppercase tracking-wider text-sm mb-4">
             <span className="h-px w-10 bg-primary" />
             Who We Serve
@@ -1165,7 +1165,7 @@ function WhoWeServe() {
           ))}
         </div>
 
-        <p className="mt-12 text-center text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-8 text-center text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
           Whether you&apos;re searching for a vanilla supplier or a bulk spices
           exporter, we deliver B2B-ready solutions backed by quality, scale,
           and sourcing expertise.
@@ -1177,9 +1177,9 @@ function WhoWeServe() {
 
 function Leadership() {
   return (
-    <section className="py-20 md:py-28 bg-secondary/60">
+    <section className="py-14 md:py-20 bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Photo side — main portrait + inset conference photo */}
           <div className="relative order-2 lg:order-1">
             {/* Main portrait — Rogers' face, clearly visible */}
@@ -1296,7 +1296,7 @@ function QuoteCTA() {
   return (
     <section
       id="quote"
-      className="py-20 md:py-24 bg-secondary/60 border-y border-border"
+      className="py-14 md:py-20 bg-secondary/60 border-y border-border"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8">
@@ -1410,8 +1410,8 @@ function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid gap-8 md:gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Contact column */}
           <div>
             <h2 className="footer-heading font-quicksand font-bold text-lg mb-5 text-accent">
