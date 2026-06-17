@@ -1180,29 +1180,44 @@ function Leadership() {
     <section className="py-20 md:py-28 bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Photo side */}
+          {/* Photo side — main portrait + inset conference photo */}
           <div className="relative order-2 lg:order-1">
+            {/* Main portrait — Rogers' face, clearly visible */}
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="/images/ceo-rwanda-conference.jpg"
-                alt="CEO Rogers Kajojo with fellow vanilla industry stakeholders at the Rwanda Vanilla Conference"
-                className="w-full h-[520px] object-cover"
+                src="/images/ceo-portrait-outdoor.jpg"
+                alt="Rogers Kajojo, CEO & Founder of JOJO Vanilla & Coffee (U) Limited, at his farm in Namanve, Mukono"
+                className="w-full h-[560px] object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent" />
             </div>
-            {/* Conference badge */}
-            <div className="absolute -top-5 -right-5 bg-accent text-accent-foreground rounded-2xl px-5 py-4 shadow-xl rotate-3 max-w-[200px]">
-              <Mic className="h-6 w-6 mb-1" />
-              <p className="font-quicksand font-bold text-sm leading-tight">
-                Keynote Stakeholder
-              </p>
-              <p className="text-xs mt-0.5">Rwanda Vanilla Conference</p>
+
+            {/* Inset conference photo — bottom-right overlap */}
+            <div className="absolute -bottom-8 -right-4 sm:-right-8 w-40 sm:w-52 lg:w-56">
+              <div className="relative overflow-hidden rounded-xl shadow-2xl border-4 border-card">
+                <img
+                  src="/images/ceo-rwanda-conference.jpg"
+                  alt="Rogers Kajojo with fellow vanilla industry stakeholders at the Rwanda Vanilla Conference"
+                  className="w-full h-28 sm:h-36 lg:h-40 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-primary/85 text-primary-foreground px-2 py-1 text-[10px] font-quicksand font-semibold text-center">
+                  🎤 Rwanda Vanilla Conference
+                </div>
+              </div>
             </div>
-            {/* CEO name plate */}
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-xl px-6 py-4 shadow-xl">
-              <p className="text-accent text-xs uppercase tracking-wider font-quicksand font-semibold">CEO & Founder</p>
-              <p className="font-quicksand font-bold text-xl">Rogers Kajojo</p>
-              <p className="text-xs text-primary-foreground/70 mt-0.5">JOJO Vanilla &amp; Coffee (U) Ltd</p>
+
+            {/* CEO name plate — top-left */}
+            <div className="absolute -top-5 -left-4 sm:-left-6 bg-primary text-primary-foreground rounded-xl px-5 py-3 shadow-xl">
+              <p className="text-accent text-[10px] uppercase tracking-wider font-quicksand font-semibold">CEO &amp; Founder</p>
+              <p className="font-quicksand font-bold text-lg leading-tight">Rogers Kajojo</p>
+              <p className="text-[10px] text-primary-foreground/70 mt-0.5">JOJO Vanilla &amp; Coffee (U) Ltd</p>
+            </div>
+
+            {/* Keynote badge — top-right */}
+            <div className="absolute -top-3 -right-3 sm:-right-5 bg-accent text-accent-foreground rounded-full w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center shadow-xl text-center rotate-6">
+              <Mic className="h-5 w-5 mb-0.5" />
+              <p className="font-quicksand font-bold text-[10px] leading-tight">Keynote</p>
+              <p className="text-[9px] leading-tight">Rwanda</p>
             </div>
           </div>
 
@@ -1213,26 +1228,29 @@ function Leadership() {
               Leadership &amp; Industry Presence
             </p>
             <h2 className="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
-              From Namanve to the <span className="text-accent">regional stage</span>
+              Meet <span className="text-accent">Rogers Kajojo</span> — farmer, founder, regional voice
             </h2>
 
             <div className="mt-6 space-y-5 text-muted-foreground text-base md:text-lg leading-relaxed">
               <p>
-                Our CEO &amp; Founder, <strong className="text-foreground font-quicksand">Rogers Kajojo</strong>,
-                was recently invited to the <strong className="text-foreground font-quicksand">Rwanda Vanilla
-                Conference</strong> as a keynote stakeholder — showcasing JOJO Vanilla &amp; Coffee&apos;s
-                produce to buyers, regulators and fellow producers from across East Africa.
+                Rogers is the CEO &amp; Founder of JOJO Vanilla &amp; Coffee (U)
+                Limited. Born and raised in Namanve, Mukono, he started with a
+                few vanilla vines on family land — and has grown the farm into
+                a trusted B2B supplier serving buyers across East Africa.
               </p>
               <p>
-                His session focused on three priorities: raising the bar on
-                Ugandan vanilla quality, building transparent supply chains
-                from smallholder farmers to export markets, and opening new
-                trade corridors across the East African Community.
+                He was recently invited to the <strong className="text-foreground font-quicksand">Rwanda Vanilla
+                Conference</strong> as a keynote stakeholder — showcasing JOJO&apos;s
+                produce to buyers, regulators and fellow producers from across
+                the region. His session focused on raising the bar on Ugandan
+                vanilla quality, building transparent supply chains from
+                smallholder farmers to export markets, and opening new trade
+                corridors across the East African Community.
               </p>
               <p>
-                It was a moment of pride for our team in Namanve — proof that
-                the work we do on a few acres in Mukono is being recognised on
-                the regional vanilla stage.
+                When he isn&apos;t on the farm or at a conference, Rogers is
+                on the road meeting farmers, training cooperatives, and
+                advocating for fair prices for Ugandan vanilla growers.
               </p>
             </div>
 
@@ -1256,6 +1274,7 @@ function Leadership() {
                 { icon: Mic, label: "Keynote Speaker · Rwanda" },
                 { icon: Award, label: "Regional Stakeholder" },
                 { icon: Globe2, label: "EAC Trade Advocate" },
+                { icon: Sprout, label: "Namanve Farmer" },
               ].map((chip) => (
                 <span
                   key={chip.label}
